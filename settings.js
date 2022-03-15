@@ -19,7 +19,7 @@ global.available = true //status online (online)
 
 // Other
 global.botname = "Techny Queen"
-global.ownername = "Rmc_Gimhan"
+global.ownername = "Techny Queen"
 global.myweb = "https://chamiyapage.netlify.app/"
 global.youtube = "එහෙම එකක් නැනෙ😁"
 global.github = "https://github.com/ChamiyaX"
