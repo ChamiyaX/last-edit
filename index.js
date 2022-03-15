@@ -692,7 +692,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             	if (!m.key.fromMe && !isCreator) throw mess.owner
                 if (!m.quoted) throw false
                 let { chat, fromMe, id, isBaileys } = m.quoted
-                if (!isBaileys) throw 'Pesan tersebut bukan dikirim oleh bot!'
+                if (!isBaileys) throw 'The message was not sent by a bot!'
                 alpha.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
             }
             break
