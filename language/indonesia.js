@@ -1,32 +1,32 @@
 exports.private = () => {
-    return `Fitur hanya bisa di gunakan di private chat`
+    return `The feature can only be used in private chat`
 }
 exports.wait = () => {
-    return `⏳ Mohon tunggu sebentar~`
+    return `Please wait a moment🛠`
 }
 exports.ok = () => {
-    return `✅ Done. Ok desu~`
+    return `Done✅`
 }
 
 exports.err = () => {
-    return `⚠️ Fitur Sedang Error`
+    return `Error Moderate Features⚠️`
 }
 exports.erorLink = () => {
-    return `⚠️ Link nya error`
+    return `The link is error⚠️`
 }
 exports.media = () => {
-    return `Silahkan pilih media yang ingin kamu download`
+    return `Please select the media you want to download`
 }
 exports.replyImg = (prefix, command) => {
-    return `Kirim/Reply Foto Dengan Caption ${prefix + command}`
+    return `Send/Reply Photo With Caption ${prefix + command}`
 }
 
 exports.wrongFormat = (prefix) => {
-    return `Format salah ❎ Silakan cek cara penggunaan di *${prefix}allmenu*.`
+    return `Incorrect format Please check how to use at *${prefix}allmenu*.`
 }
 
 exports.emptyMess = () => {
-    return `❎ Harap masukkan pesan yang ingin disampaikan!`
+    return `Please enter the message you want to convey❎`
 }
 
 exports.cmdNotFound = (cmd, prefix) => {
@@ -34,67 +34,67 @@ exports.cmdNotFound = (cmd, prefix) => {
 }
 
 exports.ownerOnly = () => {
-    return `❎ Command ini khusus Owner`
+    return `❎ This command is for the owner`
 }
 
 exports.doneOwner = () => {
-    return `✅  ️Sudah selesai, Owner ~`
+    return `✅ ️It's done, Owner ~`
 }
 
 exports.groupOnly = () => {
-    return `👥  Command ini hanya bisa digunakan di dalam grup!`
+    return `👥  This command can only be used in groups!`
 }
 
 exports.adminOnly = () => {
-    return `🙅  Command ini hanya bisa digunakan oleh admin grup!`
+    return `🙅  This command can only be used by group admins!`
 }
 
 exports.nhFalse = () => {
-    return `Kode tidak valid!`
+    return `Invalid code!`
 }
 
 exports.listBlock = (blockNumber) => {
     return `*── 「 HALL OF SHAME 」 ──*
     
-Total diblokir: *${blockNumber.length}* user\n`
+    Totally blocked: *${blockNumber.length}* user\n`
 }
 
 exports.notAdmin = () => {
-    return `❎ User bukan seorang admin! ❎`
+    return `❎ User is not an admin! ❎`
 }
 
 exports.adminAlready = () => {
-    return `❎ Tidak  dapat mem-promote user yang merupakan admin!`
+    return `❎ Cannot promote a user who is an admin!`
 }
 
 exports.botNotAdmin = () => {
-    return `Jadikan bot sebagai admin terlebih dahulu! 🙏`
+    return `Make the bot an admin first! 🙏`
 }
 
 exports.received = (pushname) => {
     return `
 Halo ${pushname}!
-Terima kasih telah melapor, laporanmu akan kami segera terima.`
+Thank you for reporting, we will receive your report soon.`
 }
 
 exports.videoLimit = () => {
-    return `Ukuran file terlalu besar!`
+    return `The file size is too big!`
 }
 
 exports.notNum = (q) => {
-    return `"${q}", bukan angka!`
+    return `"${q}", not numbers!`
 }
 exports.menunya = (salam, pushname, botname) => {
-    return `is that ${pushname} 👋 selamat ${salam} , 
-saya ${botname}, bot ini adalah Beta Multi-Device Whatsapp. 
-Jika kamu menemukan semacam bug atau kesalahan mohon dimaklumi dulu ya, 
-lapor owner agar segera di perbaiki 🙏      
+    return `is that ${pushname} 👋 safe ${salam} , 
+saya ${botname}, this bot is Whatsapp Multi-Device Beta.
+If you find some kind of bug or error, please understand.
+report the owner so that it will be fixed immediately 🙏      
 `
 }
 exports.listMenu = (time, salam, pushname, prefix) => {
-    return `*Selamat ${salam} ${pushname}*
+    return `*safe ${salam} ${pushname}*
 *⌚Time Server : ${time}*
-*📚 List-Menu Alphabot-Md :*
+*📚 List-Menu Techny Queen :*
 
 ╭─❒ 「 Bot Info 」 
 ├ ${prefix}owner
@@ -717,36 +717,36 @@ exports.rules = (prefix) => {
     return `
 *── 「 RULES AND FAQ 」 ──*
 
-1. Jangan spam bot. 🙅
-Sanksi: *❎ WARN/SOFT BLOCK*
+1. Don't spam bots. ️
+Sanctions: *❎ WARN/SOFT BLOCK*
 
-2. Jangan telepon bot. ☎️
-Sanksi: *❎ SOFT BLOCK*
+2. Don't call bots. ️
+Sanctions: *❎ SOFT BLOCK*
 
-3. Jangan mengeksploitasi bot.😖
-Sanksi: *PERMANENT BLOCK*
+3. Don't exploit bots.😖
+Sanctions: *PERMANENT BLOCK*
 
-🗯️ Bot tidak atau lambat merespon ?
-➡️ Mungkin dipengaruhi oleh jaringan, signal, banned oleh Whatsapp dan beberapa asalan. Tetap patuhi rules‼️
+️ 🛠Bot not or slow to respond ?
+️ ✅May be affected by network, signal, banned by Whatsapp and some random. Keep obeying the rules‼️
 
-🗯️ Dimana saya bisa mendapatkan Script dari bot ini ?
-➡️ Script ini masih private dan tidak pernah diperjual belikan ,bijaklah dalam mengetahui penipu.
+️ 🛠Where can I get the script from this bot?
+️ ✅This script is still private and has never been traded, be wise in knowing fraudsters.
 
-🗯️ Boleh saya menambah ke grup?
-➡️ Untuk sementara bot dalam status free to add.
+️ 🛠Can I add to the group?
+️ ✅The bot is temporarily in free to add status.
 
-🗯️ Prefixnya apa ya?
-➡️ Bot ini menggunakan multi prefix. Berarti anda bisa menggunakan prefix #, . , Dan prefix wajar lainnya.
+️ 🛠What's the prefix?
+️✅ This bot uses multi prefix. That means you can use the prefix #, . , and other reasonable prefixes.
 
-🗯️ Kak, kok syaa chat owner tidak direspon?
-➡️ Owner hanya merespon pertanyaan seputar bot Dan kendala eror, tidak untuk kenalan ataupun mengemis script.
+️ 🛠Sis, why is the chat owner not responding?
+️✅ The owner only responds to questions about bots and error problems, not for acquaintances or begging for scripts.
 
 
-Jika sudah dipahami rules-nya, silakan ketik *${prefix}allmenu* untuk memulai!
+තෙරුනා නේද😂 *${prefix}allmenu* to support!
 
-⚠️ Segala kebijakan dan ketentuan Alphabot di pegang oleh owner dan segala perubahan kebijakan, sewaktu waktu owner berhak mencabut, memblokir user(*﹏*) 
+⚠️ All TechnyQueen policies and conditions are held by the owner and all policy changes, at any time the owner has the right to revoke, block users(*﹏*) 
 
-Arigatou Gozaimasu! Untuk kalian user ramah dan Beberapa orang yg ikut membantu juga dalam project pembuatan Alphabot
+Thank you very much! For you, friendly users and some people who also helped in the TechnyQueen Bot creation project
 😖🙏
 `
 }
@@ -760,28 +760,24 @@ exports.welcome = () => {
 ╰❒ 𝖯𝖺𝗍𝗎𝗁𝗂 𝗋𝗎𝗅𝖾𝗌 𝗀𝗋𝗎𝗉 𝗒𝖺 𝗄𝖺k ~`
 }
 exports.leave = () => {
-    return `Yah kok out 😣 Mental aman kan kak >.<
+    return `Well, how come you're out Mentally safe, right sis >.<
 Goodbye`
 }
 exports.source = () => {
     return `*------「 SOURCE CODE 」 ------*
 
-Base : https://github.com/DikaArdnt/Hisoka-Morou
-Recode : https://youtube.com/playlist?list=PLFCglBzFPHG7vSQaa9S3P8yfla_d9w-2-
+Base : https://github.com/ChamiyaX/
 `
 }
 exports.tos = (ownernomer) => {
     return `
 *-------「 DONATE 」 -------*
 
-is that ☺️ 
-Kalian bisa mendukung saya agar bot ini tetap up to date dengan cara donasi
-
-Berapapun donasi kalian akan sangat berarti 👍
+සල්ලි එපා සහෝ🙂
 
 Thanks!
 
-Contact person Owner:
+Contact Owner:
 wa.me/${ownernomer}
 
     `
