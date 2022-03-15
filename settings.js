@@ -52,7 +52,7 @@ global.mess = {
     errtoimg: 'Sorry Currently Not Support Gif Sticker!',
     wait: 'පොඩ්ඩක් ඉන්න 🛠',
     lockCmd: 'Feature Not Enabled By Owner! plz contrac bot owner',
-    example1: 'Selamat Datang @user Di Group @subject Jangan Lupa Baca Rules @desc\n\nNote :\n1. @user (Mention User Join)\n2. @bio (Get Bio User Join)\n3. @tanggal (Date Now)\n4. @desc (Get Description Group)\n5. @subject (Group Name)'
+    example1: 'Hi Datang @user Di Group @subject Jangan Lupa Baca Rules @desc\n\nNote :\n1. @user (Mention User Join)\n2. @bio (Get Bio User Join)\n3. @tanggal (Date Now)\n4. @desc (Get Description Group)\n5. @subject (Group Name)'
 }
 
 let file = require.resolve(__filename)
