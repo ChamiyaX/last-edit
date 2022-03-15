@@ -85,10 +85,10 @@ exports.notNum = (q) => {
     return `"${q}", not numbers!`
 }
 exports.menunya = (salam, pushname, botname) => {
-    return `is that ${pushname} 👋 safe ${salam} , 
-saya ${botname}, this bot is Whatsapp Multi-Device Beta.
+    return `HI ${pushname}  ${salam} , 
+ ${botname},This bot is Whatsapp Multi-Device Beta.
 If you find some kind of bug or error, please understand.
-report the owner so that it will be fixed immediately 🙏      
+report the owner so that it will be fixed immediately    
 `
 }
 exports.listMenu = (time, salam, pushname, prefix) => {
