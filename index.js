@@ -1181,7 +1181,7 @@ break
                 if (!m.isGroup) return reply(mess.group)
 				if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
 				if (!isBotAdmins) return reply(lang.botNotAdmin())
-				if (!text) return reply(`Kirim perintah ${prefix + command} *teks*`)
+				if (!text) return reply(`මේ වගෙ එවපන් ${prefix + command} *teks*`)
                 await alpha.groupUpdateSubject(m.chat, text).then((res) => m.reply(lang.ok())).catch((err) => m.reply(jsonformat(err)))
             }
             break
@@ -1189,7 +1189,7 @@ break
              	if (!m.isGroup) return reply(mess.group)
 				if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
 				if (!isBotAdmins) return reply(lang.botNotAdmin())
-				if (!text) return reply(`Kirim perintah ${prefix + command} *teks*`)
+				if (!text) return reply(`මේ වගෙ එවපන් ${prefix + command} *teks*`)
 				alpha.groupUpdateDescription(m.chat, `${args.join(" ")}`)
 				reply(lang.ok())
 				}
@@ -1699,8 +1699,8 @@ case 'thanksto': case 'tqto':{
 break 
 case 'take':case 'wm':{
 if (!quoted) return reply(`Send/Reply Image/Video With Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
-if (!text) return reply(`Kirim perintah ${prefix + command} packname|author`)
-if (!text.includes('|')) return reply(`Kirim perintah ${prefix + command} packname|author`)
+if (!text) return reply(`මේ වගෙ එවපන් ${prefix + command} packname|author`)
+if (!text.includes('|')) return reply(`මේ වගෙ එවපන් ${prefix + command} packname|author`)
 if (/image/.test(mime)) {
 let media = await quoted.download()
 let encmedia = await alpha.sendImageAsSticker(m.chat, media, m, { packname: text.split("|")[0], author: text.split("|")[1] })
@@ -1717,8 +1717,8 @@ reply(`Send/Reply Image/Video With Caption ${prefix + command}\n\nDurasi Sticker
 break
 case 'setwm': case 'setexif': {
 if (!m.key.fromMe && !isCreator) return reply(mess.owner)
-if (!text) return reply(`Kirim perintah ${prefix + command} packname|author`)
-if (!text.includes('|')) return reply(`Kirim perintah ${prefix + command} packname|author`)
+if (!text) return reply(`මේ වගෙ එවපන් ${prefix + command} packname|author`)
+if (!text.includes('|')) return reply(`මේ වගෙ එවපන් ${prefix + command} packname|author`)
 global.packname = text.split("|")[0]
 global.author = text.split("|")[1]
 reply(`Exif Berhasil Diubah Menjadi\n\nPackname : ${global.packname}\nAuthor : ${global.author}`)
