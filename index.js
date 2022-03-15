@@ -894,26 +894,26 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 					})
 					break
 case 'stikerin':case 's': case 'sticker': case 'stiker': {
-if (!quoted) return reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
+if (!quoted) return reply(`Send/Reply Image/Video With Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
 if (/image/.test(mime)) {
 let media = await quoted.download()
 let encmedia = await alpha.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 11) return reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
+if ((quoted.msg || quoted).seconds > 11) return reply(`Send/Reply Image/Video With Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
 let media = await quoted.download()
 let encmedia = await alpha.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else {
-reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
+reply(`Send/Reply Image/Video With Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
 }
 }
 break
 			case 'setppbot': case 'setpp': {
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                 if (!quoted) throw 'Reply Image'
-                if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+                if (!/image/.test(mime)) throw `Send/Reply Image With Caption ${prefix + command}`
+                if (/webp/.test(mime)) throw `Send/Reply Image With Caption ${prefix + command}`
                 let media = await alpha.downloadAndSaveMediaMessage(quoted)
                 await alpha.updateProfilePicture(alpha.user.id, { url: media }).catch((err) => fs.unlinkSync(media))
                 reply(lang.ok())
@@ -922,9 +922,9 @@ break
 			case 'setppgroup': case 'setppgrup': case 'setppgc': {
                 if (!m.isGroup) throw mess.group
                 if (!m.isGroup && !isBotAdmins && !isGroupAdmins) return reply(lang.adminOnly())
-                if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+                if (!quoted) throw `Send/Reply Image With Caption ${prefix + command}`
+                if (!/image/.test(mime)) throw `Send/Reply Image With Caption ${prefix + command}`
+                if (/webp/.test(mime)) throw `Send/Reply Image With Caption ${prefix + command}`
                 let media = await alpha.downloadAndSaveMediaMessage(quoted)
                 await alpha.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
                 reply(lang.ok())
@@ -1198,8 +1198,8 @@ break
 if (!m.isGroup) return reply(lang.groupOnly())
 if (!isBotAdmins) return reply(lang.botNotAdmin())
 if (!isGroupAdmins && !isGroupOwner && !isBotAdmins) return reply(lang.adminOnly())
-if (!quoted) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
-if (!/image/.test(mime)) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
+if (!quoted) return reply(`Send/Reply Image With Caption ${prefix + command}`)
+if (!/image/.test(mime)) return reply(`Send/Reply Image With Caption ${prefix + command}`)
 let media = await alpha.downloadAndSaveMediaMessage(quoted)
 await alpha.updateProfilePicture(groupId, { url: media }).catch((err) => fs.unlinkSync(media))
 reply(lang.ok())
@@ -1698,7 +1698,7 @@ case 'thanksto': case 'tqto':{
         }
 break 
 case 'take':case 'wm':{
-if (!quoted) return reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
+if (!quoted) return reply(`Send/Reply Image/Video With Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
 if (!text) return reply(`Kirim perintah ${prefix + command} packname|author`)
 if (!text.includes('|')) return reply(`Kirim perintah ${prefix + command} packname|author`)
 if (/image/.test(mime)) {
@@ -1706,12 +1706,12 @@ let media = await quoted.download()
 let encmedia = await alpha.sendImageAsSticker(m.chat, media, m, { packname: text.split("|")[0], author: text.split("|")[1] })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 11) return reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
+if ((quoted.msg || quoted).seconds > 11) return reply(`Send/Reply Image/Video With Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
 let media = await quoted.download()
 let encmedia = await alpha.sendVideoAsSticker(m.chat, media, m, { packname: text.split("|")[0], author: text.split("|")[1] })
 await fs.unlinkSync(encmedia)
 } else {
-reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
+reply(`Send/Reply Image/Video With Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
 }
 }
 break
