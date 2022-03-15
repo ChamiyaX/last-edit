@@ -2,7 +2,7 @@ exports.private = () => {
     return `The feature can only be used in private chat`
 }
 exports.wait = () => {
-    return `Please wait a moment🛠`
+    return `Please wait a moment 🙂`
 }
 exports.ok = () => {
     return `Done✅`
