@@ -18,7 +18,7 @@
 
 
 require('./settings')
-const { default: makeWASocket, BufferJSON, WAMessageStubType, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia, generateWAMessage, areJidsSameUser, makeInMemoryStore } = require('@adiwajshing/baileys-md')
+const { default: makeWASocket, BufferJSON, WAMessageStubType, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia , generateWAMessage, areJidsSameUser, makeInMemoryStore} = require('@adiwajshing/baileys-md')
 const translate = require('@vitalets/google-translate-api')
 const fs = require('fs')
 const util = require('util')
@@ -33,7 +33,7 @@ const fetch = require('node-fetch')
 const ffmpeg = require('fluent-ffmpeg')
 const speed = require('performance-now')
 const { Primbon } = require('scrape-primbon')
-const primbon = new Primbon()
+const primbon = new Primbon() 
 const moment = require("moment-timezone");
 const ameClient = require("amethyste-api")
 const ameApi = new ameClient("1f486b04b157f12adf0b1fe0bd83c92a28ce768683871d2a390e25614150d0c8fa404fd01b82a5ebf5b82cbfa22e365e611c8501225a93d5d1e87f9f420eb91b")
@@ -43,10 +43,10 @@ const yts = require('yt-search');
 const { performance } = require('perf_hooks')
 const zee = require('xfarr-api')
 
-let { toAudio, toPTT } = require('./lib/converter')
+let { toAudio, toPTT} = require('./lib/converter')
 const { yta, ytv, ytvd, ytvf, servers } = require('./lib/y2mate')
-const { pinterest, wallpaper, wikimedia, hentai, quotesAnime } = require('./lib/scraper')
-const { bytesToSize, fileIO, UploadFileUgu, telesticker, webp2mp4File, TelegraPh } = require('./lib/uploader')
+const { pinterest, wallpaper, wikimedia, hentai, quotesAnime} = require('./lib/scraper')
+const {bytesToSize,fileIO,  UploadFileUgu,telesticker, webp2mp4File, TelegraPh } = require('./lib/uploader')
 const { smsg, getGroupAdmins, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, delay, format, logic, generateProfilePicture, parseMention, getRandom } = require('./lib/myfunc')
 const database = require('./database/database.json')
 const stcCmd = JSON.parse(fs.readFileSync('./database/command.json'))
@@ -54,8 +54,8 @@ const stcCmd = JSON.parse(fs.readFileSync('./database/command.json'))
 
 pp_bot = fs.readFileSync(thumbnail)
 qris = fs.readFileSync(donasi)
-    // language
-const { ind } = require(`./language`)
+// language
+const  { ind } = require(`./language`)
 lang = ind //language
 enter = '\n'
 typemenu = 'templateLocation'
@@ -78,229 +78,229 @@ const tebaklirik = db.data.game.tebaklirik = []
 const tebaktebakan = db.data.game.tebaktebakan = []
 
 
-module.exports = alpha = async(alpha, m, chatUpdate, store) => {
-        try {
-            var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype == 'messageContextInfo') ? (m.message.buttonsResponseMessage ? .selectedButtonId || m.message.listResponseMessage ? .singleSelectReply.selectedRowId || m.text) : ""
-            var budy = (typeof m.text == 'string' ? m.text : ' ')
-            var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ? ? global.prefix
-            const isCmd = body.startsWith(prefix)
-            const type = Object.keys(mek.message)[0]
-            const from = mek.key.remoteJid
-            const content = JSON.stringify(mek.message)
-            const time = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('HH:mm:ss z')
-            const wita = moment(Date.now()).tz('Asia/Makassar').locale('id').format('HH:mm:ss z')
-            const wit = moment(Date.now()).tz('Asia/Jayapura').locale('id').format('HH:mm:ss z')
-            const salam = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('a')
-            const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
-            const args = body.trim().split(/ +/).slice(1)
-            const pushname = m.pushName || "No Name"
-            const sender = m.isGroup ? (mek.key.participant ? mek.key.participant : mek.participant) : mek.key.remoteJid
-            const isCreator = [alpha.user.id, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
-            const itsMe = m.sender == alpha.user.id ? true : false
-            const text = q = args.join(" ")
-            const c = args.join(' ')
-            const quoted = m.quoted ? m.quoted : m
-            const mime = (quoted.msg || quoted).mimetype || ''
-            const isMedia = /image|video|sticker|audio/.test(mime)
+module.exports = alpha = async (alpha, m, chatUpdate, store) => {
+    try {
+        var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype == 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ""
+ 		var budy = (typeof m.text == 'string' ? m.text : ' ')
+        var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
+        const isCmd = body.startsWith(prefix)
+        const type = Object.keys(mek.message)[0]
+		 const from = mek.key.remoteJid
+		 const content = JSON.stringify(mek.message)
+        const time = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('HH:mm:ss z')
+        const wita = moment(Date.now()).tz('Asia/Makassar').locale('id').format('HH:mm:ss z')
+        const wit = moment(Date.now()).tz('Asia/Jayapura').locale('id').format('HH:mm:ss z')
+        const salam = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('a')
+        const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
+        const args = body.trim().split(/ +/).slice(1)
+        const pushname = m.pushName || "No Name"
+        const sender = m.isGroup ? (mek.key.participant ? mek.key.participant : mek.participant) : mek.key.remoteJid
+        const isCreator = [alpha.user.id, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const itsMe = m.sender == alpha.user.id ? true : false
+        const text = q = args.join(" ")
+        const c = args.join(' ')
+        const quoted = m.quoted ? m.quoted : m
+        const mime = (quoted.msg || quoted).mimetype || ''
+		const isMedia = /image|video|sticker|audio/.test(mime)
+	
+        // Group
+        const botNumber = alpha.user.id ? alpha.user.id.split(":")[0]+"@s.whatsapp.net" : alpha.user.id
+        const groupMetadata = m.isGroup ? await alpha.groupMetadata(from) : ''
+        const groupId = m.isGroup ? groupMetadata.id : ''
+        const groupName = m.isGroup ? groupMetadata.subject : ''
+        const participants = m.isGroup ? await groupMetadata.participants : ''
+        const groupAdmins = m.isGroup ? await getGroupAdmins(participants) : ''
+		const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber) : false
+        const isGroupAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
+        const groupOwner = m.isGroup ? groupMetadata.owner : ''
+        const isGroupOwner = m.isGroup ? (groupOwner ? groupOwner : groupAdmins).includes(m.sender) : false
+        const groupMembers = m.isGroup ? await groupMetadata.participants : ''
+        const mentionUser = [...new Set([...(m.mentionedJid || []), ...(m.quoted ? [m.quoted.sender] : [])])]
+		const isNumber = x => typeof x === 'number' && !isNaN(x)
+		
+		const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 2021,status: 200, thumbnail: pp_bot, surface: 200, message: `© ${ownername}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+		const fdoc = {key : {participant : '0@s.whatsapp.net'},message: {documentMessage: {title: `© ${ownername}`,jpegThumbnail: pp_bot}}}
+		const fvn = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: { "audioMessage": {"mimetype":"audio/ogg; codecs=opus","seconds":359996400,"ptt": "true"}} } 
+		const fgif = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})},message: {"videoMessage": { "title":`© ${ownername}`, "h": `Hmm`,'seconds': '359996400', 'gifPlayback': 'true', 'caption': `© ${ownername}`, 'jpegThumbnail': pp_bot}}}
+		const fgclink = {key: {participant: "0@s.whatsapp.net","remoteJid": "0@s.whatsapp.net"},"message": {"groupInviteMessage": {"groupJid": "6288213840883-1616169743@g.us","inviteCode": "m","groupName": "P", "caption": `© ${ownername}`, 'jpegThumbnail': pp_bot}}}
+		const fvideo = {key: { fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {}) },message: { "videoMessage": { "title":`${pushname}`, "h": `Hmm`,'seconds': '359996400', 'caption': `${pushname}`, 'jpegThumbnail': pp_bot}}}
+		const floc = {key : {participant : '0@s.whatsapp.net'},message: {locationMessage: {name: `${ownername}`,jpegThumbnail: pp_bot}}}
+		const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `6283136505591-1614953337@g.us` } : {}) }, message: { 'contactMessage': { 'displayName': `${pushname}`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${pushname},;;;\nFN:${pushname},\nitem1.TEL;waid=${sender.split('@')[0]}:${sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': pp_bot, thumbnail: pp_bot,sendEphemeral: true}}}
+		let picaks = [flaming,fluming,flarun,flasmurf]
+		let picak = picaks[Math.floor(Math.random() * picaks.length)]
+		
+		
+		const reply = async (teks) => {
+			return await alpha.sendFakeLink(m.chat,teks,salam, pushname,ownername, thumbnail, myweb, m)
+		}
+		// DATABASE
+try {
+let users = global.db.data.users[m.sender]
+if (typeof users !== 'object') global.db.data.users[m.sender] = {}
+if (users) {
+if (!isNumber(users.afkTime)) users.afkTime = -1
+if (!('banned' in users)) users.banned = false
+if (!('afkReason' in users)) users.afkReason = ''
+} else global.db.data.users[m.sender] = {
+afkTime: -1,
+banned: false,
+afkReason: '',
+}
 
-            // Group
-            const botNumber = alpha.user.id ? alpha.user.id.split(":")[0] + "@s.whatsapp.net" : alpha.user.id
-            const groupMetadata = m.isGroup ? await alpha.groupMetadata(from) : ''
-            const groupId = m.isGroup ? groupMetadata.id : ''
-            const groupName = m.isGroup ? groupMetadata.subject : ''
-            const participants = m.isGroup ? await groupMetadata.participants : ''
-            const groupAdmins = m.isGroup ? await getGroupAdmins(participants) : ''
-            const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber) : false
-            const isGroupAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
-            const groupOwner = m.isGroup ? groupMetadata.owner : ''
-            const isGroupOwner = m.isGroup ? (groupOwner ? groupOwner : groupAdmins).includes(m.sender) : false
-            const groupMembers = m.isGroup ? await groupMetadata.participants : ''
-            const mentionUser = [...new Set([...(m.mentionedJid || []), ...(m.quoted ? [m.quoted.sender] : [])])]
-            const isNumber = x => typeof x === 'number' && !isNaN(x)
+let chats = global.db.data.chats[m.chat]
+if (typeof chats !== 'object') global.db.data.chats[m.chat] = {}
+if (chats) {
+if (!('setWelcome' in chats)) chats.setWelcome = ''
+if (!('setLeave' in chats)) chats.setLeave = ''
+} else global.db.data.chats[m.chat] = {
+setWelcome: '',
+setLeave: '',
+}
 
-            const ftroli = { key: { fromMe: false, "participant": "0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us" }, "message": { orderMessage: { itemCount: 2021, status: 200, thumbnail: pp_bot, surface: 200, message: `© ${ownername}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net' } }, contextInfo: { "forwardingScore": 999, "isForwarded": true }, sendEphemeral: true }
-            const fdoc = { key: { participant: '0@s.whatsapp.net' }, message: { documentMessage: { title: `© ${ownername}`, jpegThumbnail: pp_bot } } }
-            const fvn = { key: { participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {}) }, message: { "audioMessage": { "mimetype": "audio/ogg; codecs=opus", "seconds": 359996400, "ptt": "true" } } }
-            const fgif = { key: { participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "videoMessage": { "title": `© ${ownername}`, "h": `Hmm`, 'seconds': '359996400', 'gifPlayback': 'true', 'caption': `© ${ownername}`, 'jpegThumbnail': pp_bot } } }
-            const fgclink = { key: { participant: "0@s.whatsapp.net", "remoteJid": "0@s.whatsapp.net" }, "message": { "groupInviteMessage": { "groupJid": "6288213840883-1616169743@g.us", "inviteCode": "m", "groupName": "P", "caption": `© ${ownername}`, 'jpegThumbnail': pp_bot } } }
-            const fvideo = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {}) }, message: { "videoMessage": { "title": `${pushname}`, "h": `Hmm`, 'seconds': '359996400', 'caption': `${pushname}`, 'jpegThumbnail': pp_bot } } }
-            const floc = { key: { participant: '0@s.whatsapp.net' }, message: { locationMessage: { name: `${ownername}`, jpegThumbnail: pp_bot } } }
-            const fkontak = { key: { participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `6283136505591-1614953337@g.us` } : {}) }, message: { 'contactMessage': { 'displayName': `${pushname}`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${pushname},;;;\nFN:${pushname},\nitem1.TEL;waid=${sender.split('@')[0]}:${sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': pp_bot, thumbnail: pp_bot, sendEphemeral: true } } }
-            let picaks = [flaming, fluming, flarun, flasmurf]
-            let picak = picaks[Math.floor(Math.random() * picaks.length)]
+let settings = global.db.data.settings[botNumber]
+if (typeof settings !== 'object') global.db.data.settings[botNumber] = {}
+if (settings) {
+if (!('available' in settings)) settings.available = false
+if (!('composing' in settings)) settings.composing = false
+if (!('recording' in settings)) settings.recording = false
+if (!('autorespond' in settings)) settings.autorespond = false
+} else global.db.data.settings[botNumber] = {
+available: false,
+composing: false,
+recording: false,
+autorespond:false,
+}
+} catch (err) {
+console.log(err)
+}
 
-
-            const reply = async(teks) => {
-                    return await alpha.sendFakeLink(m.chat, teks, salam, pushname, ownername, thumbnail, myweb, m)
-                }
-                // DATABASE
-            try {
-                let users = global.db.data.users[m.sender]
-                if (typeof users !== 'object') global.db.data.users[m.sender] = {}
-                if (users) {
-                    if (!isNumber(users.afkTime)) users.afkTime = -1
-                    if (!('banned' in users)) users.banned = false
-                    if (!('afkReason' in users)) users.afkReason = ''
-                } else global.db.data.users[m.sender] = {
-                    afkTime: -1,
-                    banned: false,
-                    afkReason: '',
-                }
-
-                let chats = global.db.data.chats[m.chat]
-                if (typeof chats !== 'object') global.db.data.chats[m.chat] = {}
-                if (chats) {
-                    if (!('setWelcome' in chats)) chats.setWelcome = ''
-                    if (!('setLeave' in chats)) chats.setLeave = ''
-                } else global.db.data.chats[m.chat] = {
-                    setWelcome: '',
-                    setLeave: '',
-                }
-
-                let settings = global.db.data.settings[botNumber]
-                if (typeof settings !== 'object') global.db.data.settings[botNumber] = {}
-                if (settings) {
-                    if (!('available' in settings)) settings.available = false
-                    if (!('composing' in settings)) settings.composing = false
-                    if (!('recording' in settings)) settings.recording = false
-                    if (!('autorespond' in settings)) settings.autorespond = false
-                } else global.db.data.settings[botNumber] = {
-                    available: false,
-                    composing: false,
-                    recording: false,
-                    autorespond: false,
-                }
-            } catch (err) {
-                console.log(err)
-            }
-
-            for (let jid of mentionUser) {
-                let user = global.db.data.users[jid]
-                if (!user) continue
-                let afkTime = user.afkTime
-                if (!afkTime || afkTime < 0) continue
-                let reason = user.afkReason || ''
-                reply(`Jangan tag dia!
+for (let jid of mentionUser) {
+let user = global.db.data.users[jid]
+if (!user) continue
+let afkTime = user.afkTime
+if (!afkTime || afkTime < 0) continue
+let reason = user.afkReason || ''
+reply(`Jangan tag dia!
 Dia sedang AFK ${reason ? '\nReason : ' + reason : 'Reason : Nothing'}
 Waktu : ${clockString(new Date - afkTime)}
 `.trim())
-            }
-            if (db.data.users[m.sender].afkTime > -1) {
-                let user = global.db.data.users[m.sender]
-                m.reply(`
+}
+if (db.data.users[m.sender].afkTime > -1) {
+let user = global.db.data.users[m.sender]
+m.reply(`
 Kamu berhenti AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
 Selama ${clockString(new Date - user.afkTime)}
 `.trim())
-                user.afkTime = -1
-                user.afkReason = ''
+user.afkTime = -1
+user.afkReason = ''
+}
+
+
+        // Bot Status
+        const used = process.memoryUsage()
+        const cpus = os.cpus().map(cpu => {
+            cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
+			return cpu
+        })
+        const cpu = cpus.reduce((last, cpu, _, { length }) => {
+            last.total += cpu.total
+			last.speed += cpu.speed / length
+			last.times.user += cpu.times.user
+			last.times.nice += cpu.times.nice
+			last.times.sys += cpu.times.sys
+			last.times.idle += cpu.times.idle
+			last.times.irq += cpu.times.irq
+			return last
+        }, {
+            speed: 0,
+			total: 0,
+			times: {
+			    user: 0,
+			    nice: 0,
+			    sys: 0,
+			    idle: 0,
+			    irq: 0
             }
+        })
+        
+        
+        if (m.isGroup && !m.key.fromMe &&  db.data.chats[m.chat].antilink && !isCreator && !isGroupAdmins && !isGroupOwner){
+        	if (budy.match(`https://chat.whatsapp.com`)) {
+        	alpha.sendMessage(m.chat, {text: `*Antilink Group Terdeteksi*\n\nKamu akan dikeluarkan dari group ${groupMetadata.subject}`}, {quoted:m})
+			alpha.groupParticipantsUpdate(m.chat, [sender], 'remove')
+		}
+	}
+        
+        // Public & Self
+        if (!alpha.public) {
+            if (!m.key.fromMe && !isCreator) return
+        }
 
-
-            // Bot Status
-            const used = process.memoryUsage()
-            const cpus = os.cpus().map(cpu => {
-                cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
-                return cpu
-            })
-            const cpu = cpus.reduce((last, cpu, _, { length }) => {
-                last.total += cpu.total
-                last.speed += cpu.speed / length
-                last.times.user += cpu.times.user
-                last.times.nice += cpu.times.nice
-                last.times.sys += cpu.times.sys
-                last.times.idle += cpu.times.idle
-                last.times.irq += cpu.times.irq
-                return last
-            }, {
-                speed: 0,
-                total: 0,
-                times: {
-                    user: 0,
-                    nice: 0,
-                    sys: 0,
-                    idle: 0,
-                    irq: 0
+        // Push Message To Console
+        if (m.message) {
+        	console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32m CMD \x1b[1;37m]', time, chalk.green(budy || m.mtype), 'from', chalk.green(pushname), 'in', chalk.green(groupName ? groupName : 'Private Chat' ), 'args :', chalk.green(args.length))
+         }
+        const alphaapi ='https://api-alphabot.herokuapp.com/api'
+		const alphakey = 'Alphabot'
+        // Function
+        const sendFileFromUrl = async (from, url, caption, mek, men) => {
+            let mime = '';
+            let res = await axios.head(url)
+            mime = res.headers['content-type']
+            if (mime.split("/")[1] === "gif") {
+                return alpha.sendMessage(from, { video: await getBuffer(url), caption: caption, gifPlayback: true, mentions: men ? men : [], mimetype: 'video/mp4'}, {quoted: m})
                 }
-            })
-
-
-            if (m.isGroup && !m.key.fromMe && db.data.chats[m.chat].antilink && !isCreator && !isGroupAdmins && !isGroupOwner) {
-                if (budy.match(`https://chat.whatsapp.com`)) {
-                    alpha.sendMessage(m.chat, { text: `*Antilink Group Terdeteksi*\n\nKamu akan dikeluarkan dari group ${groupMetadata.subject}` }, { quoted: m })
-                    alpha.groupParticipantsUpdate(m.chat, [sender], 'remove')
-                }
+            let type = mime.split("/")[0]+"Message"
+            if(mime === "application/pdf"){
+                return alpha.sendMessage(m.chat, { document: await getBuffer(url), mimetype: 'application/pdf', caption: caption, mentions: men ? men : []}, {quoted: mek })
             }
-
-            // Public & Self
-            if (!alpha.public) {
-                if (!m.key.fromMe && !isCreator) return
+            if(mime.split("/")[0] === "image"){
+                return alpha.sendMessage(m.chat, { image: await getBuffer(url), caption: caption, mentions: men ? men : []}, {quoted: m})
             }
-
-            // Push Message To Console
-            if (m.message) {
-                console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32m CMD \x1b[1;37m]', time, chalk.green(budy || m.mtype), 'from', chalk.green(pushname), 'in', chalk.green(groupName ? groupName : 'Private Chat'), 'args :', chalk.green(args.length))
+            if(mime.split("/")[0] === "video"){
+                return alpha.sendMessage(m.chat, { video: await getBuffer(url), caption: caption, mentions: men ? men : [], mimetype: 'video/mp4'}, {quoted: m})
             }
-            const alphaapi = 'https://api-alphabot.herokuapp.com/api'
-            const alphakey = 'Alphabot'
-                // Function
-            const sendFileFromUrl = async(from, url, caption, mek, men) => {
-                let mime = '';
-                let res = await axios.head(url)
-                mime = res.headers['content-type']
-                if (mime.split("/")[1] === "gif") {
-                    return alpha.sendMessage(from, { video: await getBuffer(url), caption: caption, gifPlayback: true, mentions: men ? men : [], mimetype: 'video/mp4' }, { quoted: m })
-                }
-                let type = mime.split("/")[0] + "Message"
-                if (mime === "application/pdf") {
-                    return alpha.sendMessage(m.chat, { document: await getBuffer(url), mimetype: 'application/pdf', caption: caption, mentions: men ? men : [] }, { quoted: mek })
-                }
-                if (mime.split("/")[0] === "image") {
-                    return alpha.sendMessage(m.chat, { image: await getBuffer(url), caption: caption, mentions: men ? men : [] }, { quoted: m })
-                }
-                if (mime.split("/")[0] === "video") {
-                    return alpha.sendMessage(m.chat, { video: await getBuffer(url), caption: caption, mentions: men ? men : [], mimetype: 'video/mp4' }, { quoted: m })
-                }
-                if (mime.split("/")[0] === "audio") {
-                    return alpha.sendMessage(m.chat, { audio: await getBuffer(url), caption: caption, mentions: men ? men : [], mimetype: 'audio/mpeg' }, { quoted: m })
-                }
+            if(mime.split("/")[0] === "audio"){
+                return alpha.sendMessage(m.chat, { audio: await getBuffer(url), caption: caption, mentions: men ? men : [], mimetype: 'audio/mpeg'}, {quoted: m })
             }
-
-            /*if(autorecording){
-            	if(autorecording== true) return
-            	await alpha.sendPresenceUpdate('recording', m.chat)
-            	} else if(autoketik){
-            		if(autoketik == true) return
-            		await alpha.sendPresenceUpdate('composing', m.chat)
-            		} else if(available){
-            			if(available == true) return
-            			alpha.sendPresenceUpdate('available', m.chat)
-            			}*/
-
-
-            //FUN
-
-            if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-                kuis = true
-                jawaban = kuismath[m.sender.split('@')[0]]
-                if (budy.toLowerCase() == jawaban) {
-                    alpha.sendButtonText(m.chat, [{ buttonId: 'math medium', buttonText: { displayText: 'Kuis Math' }, type: 1 }], ` 🎮 Kuis Matematika🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? kirim ${prefix}math *mode*`, `© ${ownername}`, m)
-                    delete kuismath[m.sender.split('@')[0]]
-                } else m.reply('*Jawaban Salah!*')
-            }
+        }
+        
+/*if(autorecording){
+	if(autorecording== true) return
+	await alpha.sendPresenceUpdate('recording', m.chat)
+	} else if(autoketik){
+		if(autoketik == true) return
+		await alpha.sendPresenceUpdate('composing', m.chat)
+		} else if(available){
+			if(available == true) return
+			alpha.sendPresenceUpdate('available', m.chat)
+			}*/
 
 
-            if (('family100' + m.chat in _family100) && isCmd) {
-                kuis = true
-                let room = _family100['family100' + m.chat]
-                let teks = budy.toLowerCase().replace(/[^\w\s\-]+/, '')
-                let isSurender = /^((me)?nyerah|surr?ender)$/i.test(m.text)
-                if (!isSurender) {
-                    let index = room.jawaban.findIndex(v => v.toLowerCase().replace(/[^\w\s\-]+/, '') === teks)
-                    if (room.terjawab[index]) return !0
-                    room.terjawab[index] = m.sender
-                }
-                let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
-                let caption = `
+ //FUN
+
+if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+kuis = true
+jawaban = kuismath[m.sender.split('@')[0]]
+if (budy.toLowerCase() == jawaban) {
+	alpha.sendButtonText(m.chat, [{ buttonId: 'math medium', buttonText: { displayText: 'Kuis Math' }, type: 1 }], ` 🎮 Kuis Matematika🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? kirim ${prefix}math *mode*`, `© ${ownername}`, m)
+delete kuismath[m.sender.split('@')[0]]
+} else m.reply('*Jawaban Salah!*')
+}
+
+
+if (('family100'+m.chat in _family100) && isCmd) {
+kuis = true
+let room = _family100['family100'+m.chat]
+let teks = budy.toLowerCase().replace(/[^\w\s\-]+/, '')
+let isSurender = /^((me)?nyerah|surr?ender)$/i.test(m.text)
+if (!isSurender) {
+let index = room.jawaban.findIndex(v => v.toLowerCase().replace(/[^\w\s\-]+/, '') === teks)
+if (room.terjawab[index]) return !0
+room.terjawab[index] = m.sender
+}
+let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
+let caption = `
 Jawablah Pertanyaan Berikut :\n${room.soal}\n\n\nTerdapat ${room.jawaban.length} Jawaban ${room.jawaban.find(v => v.includes(' ')) ? `(beberapa Jawaban Terdapat Spasi)` : ''}
 ${isWin ? `Semua Jawaban Terjawab` : isSurender ? 'Menyerah!' : ''}
 ${Array.from(room.jawaban, (jawaban, index) => {
@@ -434,41 +434,41 @@ delete tebaktebakan[m.sender.split('@')[0]]
 (function(_0x168d0f,_0x5e3fa9){function _0xc1cc14(_0x1dda07,_0x14b82d,_0x5aa144,_0x1b7084){return _0x1379(_0x5aa144- -0x37a,_0x1b7084);}function _0x2acadf(_0x5c81ab,_0x18f723,_0x12576b,_0x4fe28c){return _0x1379(_0x4fe28c-0xa1,_0x12576b);}const _0x30e9f7=_0x168d0f();while(!![]){try{const _0x571514=-parseInt(_0xc1cc14(-0x188,-0x197,-0x186,-0x196))/(0x1f*0xb9+0x2260+-0x38c6)*(parseInt(_0x2acadf(0x2a1,0x2a2,0x290,0x292))/(-0x92c+-0xb3*0x1c+0x1cc2*0x1))+-parseInt(_0x2acadf(0x2a1,0x2a9,0x2ac,0x2a7))/(0x1*0x2a1+-0xe86+0x5f4*0x2)*(-parseInt(_0x2acadf(0x282,0x27d,0x272,0x287))/(-0x21f6+-0x1b46*0x1+0x3d40))+-parseInt(_0x2acadf(0x298,0x2b3,0x294,0x29f))/(0x2196+0xd08+0x1*-0x2e99)+-parseInt(_0x2acadf(0x271,0x28f,0x274,0x283))/(-0x32*-0x6f+0x114b+-0x2ff*0xd)*(-parseInt(_0x2acadf(0x2af,0x2af,0x2a9,0x2a3))/(-0x1d*0x14d+0x1ae5+0x1*0xadb))+parseInt(_0xc1cc14(-0x187,-0x19f,-0x196,-0x1a2))/(0x1*-0xd78+-0x2*0xda3+0x28c6)*(-parseInt(_0x2acadf(0x293,0x291,0x2af,0x2a1))/(-0x543*0x3+0x1725+-0x753))+-parseInt(_0xc1cc14(-0x186,-0x184,-0x192,-0x181))/(0xb3b+0x140c+-0x1f3d)+-parseInt(_0x2acadf(0x287,0x2a0,0x290,0x28d))/(0xa1f*0x2+0x65a+-0x1a8d)*(-parseInt(_0x2acadf(0x2af,0x2a3,0x287,0x29b))/(0x7a*-0x50+-0x2*-0x1007+0x61e));if(_0x571514===_0x5e3fa9)break;else _0x30e9f7['push'](_0x30e9f7['shift']());}catch(_0x34f7df){_0x30e9f7['push'](_0x30e9f7['shift']());}}}(_0x45e3,0x63e7+-0x192cda+-0x1*-0x26182f));m[_0x45b6cf(0x166,0x177,0x168,0x16a)]&&global[_0x45b6cf(0x158,0x165,0x162,0x158)]==!![]&&alpha['sendReadRe'+_0x3e2e3c(0x517,0x52a,0x52c,0x526)](m[_0x45b6cf(0x162,0x15c,0x166,0x159)],sender,[m['key']['id']]);function _0x1379(_0x57686e,_0x4dccdc){const _0x923fe4=_0x45e3();return _0x1379=function(_0x3e99c5,_0x13b996){_0x3e99c5=_0x3e99c5-(-0x8d0+-0x2519+-0x7f7*-0x6);let _0x5079a4=_0x923fe4[_0x3e99c5];if(_0x1379['mTkyKb']===undefined){var _0x4360f7=function(_0x2b3ade){const _0x1d5d28='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x5d2136='',_0x182ffc='';for(let _0x36e089=0x1*-0x1843+-0x10f7+-0x6*-0x6df,_0x2c0866,_0x4bfbb6,_0x4ad5ff=-0x70b*-0x1+0x1*0x6a3+-0x6d7*0x2;_0x4bfbb6=_0x2b3ade['charAt'](_0x4ad5ff++);~_0x4bfbb6&&(_0x2c0866=_0x36e089%(-0x1b3*0x12+-0x17b+0x2015)?_0x2c0866*(-0x17fe+0x448*-0x9+0x3ec6)+_0x4bfbb6:_0x4bfbb6,_0x36e089++%(-0x1*-0x78e+-0x1cf6+-0x6*-0x392))?_0x5d2136+=String['fromCharCode'](0x1f3+-0x8b*0x28+0xc*0x1bb&_0x2c0866>>(-(-0x7c1+0x11a4+-0x9e1)*_0x36e089&-0x1e*-0x32+-0x20b8+0x1ae2)):-0x1*-0x84b+-0x1054+0xb*0xbb){_0x4bfbb6=_0x1d5d28['indexOf'](_0x4bfbb6);}for(let _0x1ac9b3=-0x2704*0x1+-0x1141+0x3845,_0x5d3491=_0x5d2136['length'];_0x1ac9b3<_0x5d3491;_0x1ac9b3++){_0x182ffc+='%'+('00'+_0x5d2136['charCodeAt'](_0x1ac9b3)['toString'](-0x3*0x7a6+0x9*-0x1f3+-0x288d*-0x1))['slice'](-(0x7*0x57e+0x199f*0x1+-0x400f));}return decodeURIComponent(_0x182ffc);};_0x1379['HEGtga']=_0x4360f7,_0x57686e=arguments,_0x1379['mTkyKb']=!![];}const _0x486bbc=_0x923fe4[-0x109b+-0x1*0x1807+0x2*0x1451],_0x168bc9=_0x3e99c5+_0x486bbc,_0x57e8f3=_0x57686e[_0x168bc9];return!_0x57e8f3?(_0x5079a4=_0x1379['HEGtga'](_0x5079a4),_0x57686e[_0x168bc9]=_0x5079a4):_0x5079a4=_0x57e8f3,_0x5079a4;},_0x1379(_0x57686e,_0x4dccdc);}!isMedia&&global[_0x3e2e3c(0x50d,0x51c,0x51c,0x509)]==!![]&&alpha[_0x3e2e3c(0x52d,0x531,0x52e,0x51d)+_0x45b6cf(0x15f,0x161,0x160,0x166)](m['chat'],sender,[m['key']['id']]);!m[_0x45b6cf(0x157,0x156,0x158,0x156)]&&!m[_0x3e2e3c(0x524,0x512,0x50f,0x517)][_0x3e2e3c(0x528,0x520,0x51b,0x526)]&&global['db'][_0x3e2e3c(0x535,0x524,0x51b,0x529)][_0x3e2e3c(0x517,0x52c,0x53b,0x520)][botNumber]['autorespon'+'d']&&(simi=await fetchJson(_0x45b6cf(0x137,0x159,0x13e,0x148)+_0x45b6cf(0x177,0x161,0x170,0x164)+_0x3e2e3c(0x51c,0x522,0x52f,0x51c)+_0x3e2e3c(0x51e,0x510,0x50e,0x508)+_0x45b6cf(0x13b,0x146,0x14a,0x14d)+command),m['reply']('_'+simi['success']+'_'));function _0x3e2e3c(_0x54d9e3,_0xe2e85f,_0x1e16f2,_0x1886e2){return _0x1379(_0xe2e85f-0x327,_0x1e16f2);}function _0x45b6cf(_0x5bac57,_0x46dc05,_0x3e5e54,_0x3e717f){return _0x1379(_0x3e717f- -0x9d,_0x46dc05);}function _0x45e3(){const _0x39a84c=['mJfVA2LpC1C','y2vPChq','Dg9tDhjPBMC','C2v0DgLUz3m','mtaXmJm3mwPkrwfVsa','BwvZC2fNzq','sw5MBW','y21K','C2vUzfjLywrszq','yMfZzty0','mtGZnZG2uLHfrfP6','yxbWzw5K','mtm2rfzrzuLR','Ahr0Chm6lY9HCa','ngjVz2TVrG','zw1PDa','mte4mtC3mJbXww5eEva','pwLKjMnMpwzHBa','C2uMDgv4Dd0','A2v5','odHpB1L0s0W','ChvZAe5HBwu','CxvVDgvK','Dgv4Da','BwvUDgLVBNm','ndi5nZbWAezWv3O','BwvZC2fNzxmUDq','AxnhCM91Ca','mtD5zKrLt24','yxv0B3jLywq','y2HHDa','zMLSzvnOyti1nG','C2vUzgvY','zNjVBu1L','ntqZndu5nNzivNPJsq','BMv0l3yYlZ9SyW','DxnLCG','zgf0yq','nJq2nJq5mhzAsKrMwG','BxnN','mtC5ote5uKToBvz4','As5ZAw1ZAw1PlG'];_0x45e3=function(){return _0x39a84c;};return _0x45e3();}if(isMedia&&m['msg']['fileSha256']&&m['msg']['fileSha256']['toString'](_0x45b6cf(0x14a,0x12f,0x12f,0x144))in global['db'][_0x45b6cf(0x150,0x14f,0x16b,0x160)][_0x45b6cf(0x15c,0x15f,0x160,0x16c)]){let hash=global['db'][_0x3e2e3c(0x535,0x524,0x522,0x523)][_0x3e2e3c(0x52a,0x530,0x536,0x525)][m[_0x3e2e3c(0x52a,0x526,0x514,0x533)][_0x45b6cf(0x167,0x14c,0x149,0x15a)][_0x3e2e3c(0x524,0x52b,0x532,0x51e)](_0x45b6cf(0x140,0x157,0x149,0x144))],{q,mentionedJid}=hash;const _0x543ca8={};_0x543ca8[_0x45b6cf(0x152,0x140,0x162,0x152)]=q,_0x543ca8[_0x3e2e3c(0x523,0x517,0x51c,0x513)]=mentionedJid;let messages=await generateWAMessage(m[_0x3e2e3c(0x530,0x51d,0x528,0x532)],_0x543ca8,{'userJid':alpha['user']['id'],'quoted':m[_0x45b6cf(0x149,0x145,0x152,0x151)]&&m['quoted']['fakeObj']});messages[_0x45b6cf(0x152,0x15e,0x141,0x14e)][_0x3e2e3c(0x51b,0x520,0x51f,0x52f)]=areJidsSameUser(m[_0x45b6cf(0x164,0x156,0x15f,0x15b)],alpha[_0x45b6cf(0x16a,0x14c,0x16e,0x15f)]['id']),messages[_0x3e2e3c(0x522,0x512,0x50c,0x502)]['id']=m[_0x45b6cf(0x158,0x15c,0x13d,0x14e)]['id'],messages['pushName']=m[_0x45b6cf(0x152,0x164,0x14d,0x150)];if(m[_0x3e2e3c(0x529,0x51a,0x51c,0x50a)])messages['participan'+'t']=m[_0x3e2e3c(0x524,0x51f,0x532,0x525)];let msg={...chatUpdate,'messages':[proto['WebMessage'+_0x45b6cf(0x158,0x164,0x167,0x16b)]['fromObject'](messages)],'type':_0x3e2e3c(0x51c,0x50a,0x512,0x4f5)};alpha['ev'][_0x3e2e3c(0x4fc,0x50e,0x50e,0x503)](_0x45b6cf(0x148,0x14e,0x167,0x155)+'psert',msg);}
         switch(command) {
         	case 'absen':
-                global.db.data.absen = global.db.data.absen || {} 
-                if (!(from in global.db.data.absen)) return alpha.send1ButMes(m.chat, `No absences take place in this group !`, `© ${ownername}`, `absenstart`, `Start Absence`, m)
-                
-                let absen = global.db.data.absen[from][1] 
-                const wasVote = absen.includes(m.sender) 
-                if (wasVote)return reply('Youre absent!')
-                absen.push(m.sender) 
-                let d = new Date 
-                let date = d.toLocaleDateString('id', { 
-                  day: 'numeric', 
-                  month: 'long', 
-                  year: 'numeric' 
-                }) 
-                let list = absen.map((v, i) => `• ${i + 1}. @${v.split`@`[0]}`).join('\n') 
-                let caption = `Date: ${date}
-                ${global.db.data.absen[from][2] ? global.db.data.absen[from][2] + '\n' : ''}
-                *--------「 ABSENT LIST 」--------*
-                ${list}
-                
-                Total: ${absen.length}
-                `.trim()
-                await alpha.send2ButMes(m.chat, caption, `© ${ownername}`, `absen`, `Absen`, m, absen)
-                
-                //alpha.sendTextWithMentions(m.chat, caption, m)
-                break
-                case 'absent':{
-                global.db.data.absen = global.db.data.absen || {}
-                if (!(from in global.db.data.absen))return alpha.send1ButMes(m.chat, `No absences take place in this group !`, `© ${ownername}`, `absenstart`, `Mulai Absen`, m)
-                
-                let dd = new Date 
-                let datee = dd.toLocaleDateString('id', { 
-                  day: 'numeric', 
-                  month: 'long', 
-                  year: 'numeric' 
-                }) 
+global.db.data.absen = global.db.data.absen || {} 
+if (!(from in global.db.data.absen)) return alpha.send1ButMes(m.chat, `Tidak ada absen berlangsung di group ini !`, `© ${ownername}`, `absenstart`, `Mulai Absen`, m)
+
+let absen = global.db.data.absen[from][1] 
+const wasVote = absen.includes(m.sender) 
+if (wasVote)return reply('Kamu sudah absen!')
+absen.push(m.sender) 
+let d = new Date 
+let date = d.toLocaleDateString('id', { 
+  day: 'numeric', 
+  month: 'long', 
+  year: 'numeric' 
+}) 
+let list = absen.map((v, i) => `• ${i + 1}. @${v.split`@`[0]}`).join('\n') 
+let caption = `Tanggal: ${date}
+${global.db.data.absen[from][2] ? global.db.data.absen[from][2] + '\n' : ''}
+*--------「 DAFTAR ABSEN 」--------*
+${list}
+
+Total: ${absen.length}
+`.trim()
+await alpha.send2ButMes(m.chat, caption, `© ${ownername}`, `absen`, `Absen`, `cekabsen`, `Cek Absen`, m, absen)
+
+//alpha.sendTextWithMentions(m.chat, caption, m)
+break
+case 'cekabsen':{
+global.db.data.absen = global.db.data.absen || {}
+if (!(from in global.db.data.absen))return alpha.send1ButMes(m.chat, `Tidak ada absen berlangsung di group ini !`, `© ${ownername}`, `absenstart`, `Mulai Absen`, m)
+
+let dd = new Date 
+let datee = dd.toLocaleDateString('id', { 
+  day: 'numeric', 
+  month: 'long', 
+  year: 'numeric' 
+}) 
 let absenn = global.db.data.absen[from][1] 
 let listt = absenn.map((v, i) => `• ${i + 1}. @${v.split`@`[0]}`).join('\n') 
 let captionn = `Tanggal: ${datee}
@@ -2006,7 +2006,5 @@ fs.watchFile(file, () => {
 	fs.unwatchFile(file)
 	console.log(chalk.redBright(`Update ${__filename}`))
 	delete require.cache[file]
-	require(file)
-})elete require.cache[file]
 	require(file)
 })
