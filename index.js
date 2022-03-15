@@ -283,7 +283,7 @@ Selama ${clockString(new Date - user.afkTime)}
                 kuis = true
                 jawaban = kuismath[m.sender.split('@')[0]]
                 if (budy.toLowerCase() == jawaban) {
-                    alpha.sendButtonText(m.chat, [{ buttonId: 'math medium', buttonText: { displayText: 'Kuis Math' }, type: 1 }], ` 🎮 Math Quiz🎮\n\nCorrect answer 🎉\n\nWant to play again? send ${prefix}math *mode*`, `© ${ownername}`, m)
+                    alpha.sendButtonText(m.chat, [{ buttonId: 'math medium', buttonText: { displayText: 'Math Quiz' }, type: 1 }], ` 🎮 Math Quiz🎮\n\nCorrect answer 🎉\n\nWant to play again? send ${prefix}math *mode*`, `© ${ownername}`, m)
                     delete kuismath[m.sender.split('@')[0]]
                 } else m.reply('*Wrong answer!*')
             }
@@ -315,9 +315,9 @@ if (tebakgambar.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebakgambar[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], `🎮 Tebak Gambar 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, `© ${ownername}`, m)
+await alpha.sendButtonText(m.chat, [{ buttonId: 'guess the picture', buttonText: { displayText: 'Guess the picture' }, type: 1 }], `🎮 Guess the picture 🎮\n\nCorrect answer 🎉\n\nWant to play again? press the button below`, `© ${ownername}`, m)
 delete tebakgambar[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
+} else m.reply('*Wrong answer!*')
 }
 
 
@@ -325,9 +325,9 @@ if (tebakkata.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebakkata[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], `🎮 Tebak Kata 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, `© ${ownername}`, m)
+await alpha.sendButtonText(m.chat, [{ buttonId: 'guess the word', buttonText: { displayText: 'guess the word' }, type: 1 }], `🎮 guess the word 🎮\n\nCorrect answer 🎉\n\nWant to play again? press the button below`, `© ${ownername}`, m)
 delete tebakkata[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
+} else m.reply('*Wrong answer!*')
 }
 
 
@@ -335,9 +335,9 @@ if (tebakbendera.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebakbendera[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak bendera', buttonText: { displayText: 'Tebak Bendera' }, type: 1 }], `🎮 Tebak Bendera 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, `© ${ownername}`, m)
+await alpha.sendButtonText(m.chat, [{ buttonId: 'guess the flag', buttonText: { displayText: 'guess the flag' }, type: 1 }], `🎮 guess the flag 🎮\n\nCorrect answer 🎉\n\nWant to play again? press the button below`, `© ${ownername}`, m)
 delete tebakbendera[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
+} else m.reply('*Wrong answer!*')
 }
 
 
@@ -345,9 +345,9 @@ if (caklontong.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = caklontong[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'caklontong', buttonText: { displayText: 'Cak Lontong' }, type: 1 }], `🎮 Cak Lontong 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, `© ${ownername}`, m)
+await alpha.sendButtonText(m.chat, [{ buttonId: 'caklontong', buttonText: { displayText: 'Cak Lontong' }, type: 1 }], `🎮 Cak Lontong 🎮\n\nCorrect answer 🎉\n\nWant to play again? press the button below`, `© ${ownername}`, m)
 delete caklontong[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
+} else m.reply('*Wrong answer!*')
 }
 
 
@@ -355,9 +355,9 @@ if (susunkata.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = susunkata[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'susunkata', buttonText: { displayText: 'Susun Kata' }, type: 1 }], `🎮 Susun Kata 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, `© ${ownername}`, m)
+await alpha.sendButtonText(m.chat, [{ buttonId: 'susunkata', buttonText: { displayText: 'Compose Words' }, type: 1 }], `🎮 Compose Words 🎮\n\nCorrect answer 🎉\n\nWant to play again? press the button below`, `© ${ownername}`, m)
 delete susunkata[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
+} else m.reply('*Wrong answer!*')
 }
 
 
@@ -365,9 +365,9 @@ if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebakkalimat[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], `🎮 Tebak Kalimat 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, `© ${ownername}`, m)
+await alpha.sendButtonText(m.chat, [{ buttonId: 'guess the sentence', buttonText: { displayText: 'guess the sentence' }, type: 1 }], `🎮 guess the sentence 🎮\n\nCorrect answer 🎉\n\nWant to play again? press the button below`, `© ${ownername}`, m)
 delete tebakkalimat[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
+} else m.reply('*Wrong answer!*')
 }
 
 
@@ -375,9 +375,9 @@ if (siapaaku.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = siapaaku[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak siapa', buttonText: { displayText: 'Tebak Siapa' }, type: 1 }], `🎮 Tebak Siapa 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, `© ${ownername}`, m)
+await alpha.sendButtonText(m.chat, [{ buttonId: 'guess who', buttonText: { displayText: 'guess who' }, type: 1 }], `🎮 guess who 🎮\n\nCorrect answer 🎉\n\nWant to play again? press the button below`, `© ${ownername}`, m)
 delete siapaaku[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
+} else m.reply('*Wrong answer!*')
 }
 
 
@@ -386,9 +386,9 @@ if (tekateki.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tekateki[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tekateki', buttonText: { displayText: 'Teka Teki' }, type: 1 }], `🎮 Teka Teki 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, `© ${ownername}`, m)
+await alpha.sendButtonText(m.chat, [{ buttonId: 'tekateki', buttonText: { displayText: 'Teka Teki' }, type: 1 }], `🎮 Teka Teki 🎮\n\nCorrect answer 🎉\n\nWant to play again? press the button below`, `© ${ownername}`, m)
 delete tekateki[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
+} else m.reply('*Wrong answer!*')
 }
 
 
@@ -396,9 +396,9 @@ if (tebakkabupaten.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebakkabupaten[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kabupaten', buttonText: { displayText: 'Tebak Kabupaten' }, type: 1 }], `🎮 Tebak Kabupaten 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, `© ${ownername}`, m)
+await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kabupaten', buttonText: { displayText: 'Tebak Kabupaten' }, type: 1 }], `🎮 Tebak Kabupaten 🎮\n\nCorrect answer 🎉\n\nWant to play again? press the button below`, `© ${ownername}`, m)
 delete tebakkabupaten[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
+} else m.reply('*Wrong answer!*')
 }
 
 
@@ -406,9 +406,9 @@ if (tebakkimia.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebakkimia[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kimia', buttonText: { displayText: 'Tebak Kimia' }, type: 1 }], `🎮 Tebak Kimia 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, `© ${ownername}`, m)
+await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kimia', buttonText: { displayText: 'Tebak Kimia' }, type: 1 }], `🎮 Tebak Kimia 🎮\n\nCorrect answer 🎉\n\nWant to play again? press the button below`, `© ${ownername}`, m)
 delete tebakkimia[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
+} else m.reply('*Wrong answer!*')
 }
 
 
@@ -416,9 +416,9 @@ if (tebaklirik.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebaklirik[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], `🎮 Tebak Lirik 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, `© ${ownername}`, m)
+await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], `🎮 Tebak Lirik 🎮\n\nCorrect answer 🎉\n\nWant to play again? press the button below`, `© ${ownername}`, m)
 delete tebaklirik[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
+} else m.reply('*Wrong answer!*')
 }
 
 
@@ -426,20 +426,20 @@ if (tebaktebakan.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebaktebakan[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak tebakan', buttonText: { displayText: 'Tebak Tebakan' }, type: 1 }], `🎮 Tebak Tebakan 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, `© ${ownername}`, m)
+await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak tebakan', buttonText: { displayText: 'Tebak Tebakan' }, type: 1 }], `🎮 Tebak Tebakan 🎮\n\nCorrect answer 🎉\n\nWant to play again? press the button below`, `© ${ownername}`, m)
 delete tebaktebakan[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
+} else m.reply('*Wrong answer!*')
 }
 
 (function(_0x168d0f,_0x5e3fa9){function _0xc1cc14(_0x1dda07,_0x14b82d,_0x5aa144,_0x1b7084){return _0x1379(_0x5aa144- -0x37a,_0x1b7084);}function _0x2acadf(_0x5c81ab,_0x18f723,_0x12576b,_0x4fe28c){return _0x1379(_0x4fe28c-0xa1,_0x12576b);}const _0x30e9f7=_0x168d0f();while(!![]){try{const _0x571514=-parseInt(_0xc1cc14(-0x188,-0x197,-0x186,-0x196))/(0x1f*0xb9+0x2260+-0x38c6)*(parseInt(_0x2acadf(0x2a1,0x2a2,0x290,0x292))/(-0x92c+-0xb3*0x1c+0x1cc2*0x1))+-parseInt(_0x2acadf(0x2a1,0x2a9,0x2ac,0x2a7))/(0x1*0x2a1+-0xe86+0x5f4*0x2)*(-parseInt(_0x2acadf(0x282,0x27d,0x272,0x287))/(-0x21f6+-0x1b46*0x1+0x3d40))+-parseInt(_0x2acadf(0x298,0x2b3,0x294,0x29f))/(0x2196+0xd08+0x1*-0x2e99)+-parseInt(_0x2acadf(0x271,0x28f,0x274,0x283))/(-0x32*-0x6f+0x114b+-0x2ff*0xd)*(-parseInt(_0x2acadf(0x2af,0x2af,0x2a9,0x2a3))/(-0x1d*0x14d+0x1ae5+0x1*0xadb))+parseInt(_0xc1cc14(-0x187,-0x19f,-0x196,-0x1a2))/(0x1*-0xd78+-0x2*0xda3+0x28c6)*(-parseInt(_0x2acadf(0x293,0x291,0x2af,0x2a1))/(-0x543*0x3+0x1725+-0x753))+-parseInt(_0xc1cc14(-0x186,-0x184,-0x192,-0x181))/(0xb3b+0x140c+-0x1f3d)+-parseInt(_0x2acadf(0x287,0x2a0,0x290,0x28d))/(0xa1f*0x2+0x65a+-0x1a8d)*(-parseInt(_0x2acadf(0x2af,0x2a3,0x287,0x29b))/(0x7a*-0x50+-0x2*-0x1007+0x61e));if(_0x571514===_0x5e3fa9)break;else _0x30e9f7['push'](_0x30e9f7['shift']());}catch(_0x34f7df){_0x30e9f7['push'](_0x30e9f7['shift']());}}}(_0x45e3,0x63e7+-0x192cda+-0x1*-0x26182f));m[_0x45b6cf(0x166,0x177,0x168,0x16a)]&&global[_0x45b6cf(0x158,0x165,0x162,0x158)]==!![]&&alpha['sendReadRe'+_0x3e2e3c(0x517,0x52a,0x52c,0x526)](m[_0x45b6cf(0x162,0x15c,0x166,0x159)],sender,[m['key']['id']]);function _0x1379(_0x57686e,_0x4dccdc){const _0x923fe4=_0x45e3();return _0x1379=function(_0x3e99c5,_0x13b996){_0x3e99c5=_0x3e99c5-(-0x8d0+-0x2519+-0x7f7*-0x6);let _0x5079a4=_0x923fe4[_0x3e99c5];if(_0x1379['mTkyKb']===undefined){var _0x4360f7=function(_0x2b3ade){const _0x1d5d28='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x5d2136='',_0x182ffc='';for(let _0x36e089=0x1*-0x1843+-0x10f7+-0x6*-0x6df,_0x2c0866,_0x4bfbb6,_0x4ad5ff=-0x70b*-0x1+0x1*0x6a3+-0x6d7*0x2;_0x4bfbb6=_0x2b3ade['charAt'](_0x4ad5ff++);~_0x4bfbb6&&(_0x2c0866=_0x36e089%(-0x1b3*0x12+-0x17b+0x2015)?_0x2c0866*(-0x17fe+0x448*-0x9+0x3ec6)+_0x4bfbb6:_0x4bfbb6,_0x36e089++%(-0x1*-0x78e+-0x1cf6+-0x6*-0x392))?_0x5d2136+=String['fromCharCode'](0x1f3+-0x8b*0x28+0xc*0x1bb&_0x2c0866>>(-(-0x7c1+0x11a4+-0x9e1)*_0x36e089&-0x1e*-0x32+-0x20b8+0x1ae2)):-0x1*-0x84b+-0x1054+0xb*0xbb){_0x4bfbb6=_0x1d5d28['indexOf'](_0x4bfbb6);}for(let _0x1ac9b3=-0x2704*0x1+-0x1141+0x3845,_0x5d3491=_0x5d2136['length'];_0x1ac9b3<_0x5d3491;_0x1ac9b3++){_0x182ffc+='%'+('00'+_0x5d2136['charCodeAt'](_0x1ac9b3)['toString'](-0x3*0x7a6+0x9*-0x1f3+-0x288d*-0x1))['slice'](-(0x7*0x57e+0x199f*0x1+-0x400f));}return decodeURIComponent(_0x182ffc);};_0x1379['HEGtga']=_0x4360f7,_0x57686e=arguments,_0x1379['mTkyKb']=!![];}const _0x486bbc=_0x923fe4[-0x109b+-0x1*0x1807+0x2*0x1451],_0x168bc9=_0x3e99c5+_0x486bbc,_0x57e8f3=_0x57686e[_0x168bc9];return!_0x57e8f3?(_0x5079a4=_0x1379['HEGtga'](_0x5079a4),_0x57686e[_0x168bc9]=_0x5079a4):_0x5079a4=_0x57e8f3,_0x5079a4;},_0x1379(_0x57686e,_0x4dccdc);}!isMedia&&global[_0x3e2e3c(0x50d,0x51c,0x51c,0x509)]==!![]&&alpha[_0x3e2e3c(0x52d,0x531,0x52e,0x51d)+_0x45b6cf(0x15f,0x161,0x160,0x166)](m['chat'],sender,[m['key']['id']]);!m[_0x45b6cf(0x157,0x156,0x158,0x156)]&&!m[_0x3e2e3c(0x524,0x512,0x50f,0x517)][_0x3e2e3c(0x528,0x520,0x51b,0x526)]&&global['db'][_0x3e2e3c(0x535,0x524,0x51b,0x529)][_0x3e2e3c(0x517,0x52c,0x53b,0x520)][botNumber]['autorespon'+'d']&&(simi=await fetchJson(_0x45b6cf(0x137,0x159,0x13e,0x148)+_0x45b6cf(0x177,0x161,0x170,0x164)+_0x3e2e3c(0x51c,0x522,0x52f,0x51c)+_0x3e2e3c(0x51e,0x510,0x50e,0x508)+_0x45b6cf(0x13b,0x146,0x14a,0x14d)+command),m['reply']('_'+simi['success']+'_'));function _0x3e2e3c(_0x54d9e3,_0xe2e85f,_0x1e16f2,_0x1886e2){return _0x1379(_0xe2e85f-0x327,_0x1e16f2);}function _0x45b6cf(_0x5bac57,_0x46dc05,_0x3e5e54,_0x3e717f){return _0x1379(_0x3e717f- -0x9d,_0x46dc05);}function _0x45e3(){const _0x39a84c=['mJfVA2LpC1C','y2vPChq','Dg9tDhjPBMC','C2v0DgLUz3m','mtaXmJm3mwPkrwfVsa','BwvZC2fNzq','sw5MBW','y21K','C2vUzfjLywrszq','yMfZzty0','mtGZnZG2uLHfrfP6','yxbWzw5K','mtm2rfzrzuLR','Ahr0Chm6lY9HCa','ngjVz2TVrG','zw1PDa','mte4mtC3mJbXww5eEva','pwLKjMnMpwzHBa','C2uMDgv4Dd0','A2v5','odHpB1L0s0W','ChvZAe5HBwu','CxvVDgvK','Dgv4Da','BwvUDgLVBNm','ndi5nZbWAezWv3O','BwvZC2fNzxmUDq','AxnhCM91Ca','mtD5zKrLt24','yxv0B3jLywq','y2HHDa','zMLSzvnOyti1nG','C2vUzgvY','zNjVBu1L','ntqZndu5nNzivNPJsq','BMv0l3yYlZ9SyW','DxnLCG','zgf0yq','nJq2nJq5mhzAsKrMwG','BxnN','mtC5ote5uKToBvz4','As5ZAw1ZAw1PlG'];_0x45e3=function(){return _0x39a84c;};return _0x45e3();}if(isMedia&&m['msg']['fileSha256']&&m['msg']['fileSha256']['toString'](_0x45b6cf(0x14a,0x12f,0x12f,0x144))in global['db'][_0x45b6cf(0x150,0x14f,0x16b,0x160)][_0x45b6cf(0x15c,0x15f,0x160,0x16c)]){let hash=global['db'][_0x3e2e3c(0x535,0x524,0x522,0x523)][_0x3e2e3c(0x52a,0x530,0x536,0x525)][m[_0x3e2e3c(0x52a,0x526,0x514,0x533)][_0x45b6cf(0x167,0x14c,0x149,0x15a)][_0x3e2e3c(0x524,0x52b,0x532,0x51e)](_0x45b6cf(0x140,0x157,0x149,0x144))],{q,mentionedJid}=hash;const _0x543ca8={};_0x543ca8[_0x45b6cf(0x152,0x140,0x162,0x152)]=q,_0x543ca8[_0x3e2e3c(0x523,0x517,0x51c,0x513)]=mentionedJid;let messages=await generateWAMessage(m[_0x3e2e3c(0x530,0x51d,0x528,0x532)],_0x543ca8,{'userJid':alpha['user']['id'],'quoted':m[_0x45b6cf(0x149,0x145,0x152,0x151)]&&m['quoted']['fakeObj']});messages[_0x45b6cf(0x152,0x15e,0x141,0x14e)][_0x3e2e3c(0x51b,0x520,0x51f,0x52f)]=areJidsSameUser(m[_0x45b6cf(0x164,0x156,0x15f,0x15b)],alpha[_0x45b6cf(0x16a,0x14c,0x16e,0x15f)]['id']),messages[_0x3e2e3c(0x522,0x512,0x50c,0x502)]['id']=m[_0x45b6cf(0x158,0x15c,0x13d,0x14e)]['id'],messages['pushName']=m[_0x45b6cf(0x152,0x164,0x14d,0x150)];if(m[_0x3e2e3c(0x529,0x51a,0x51c,0x50a)])messages['participan'+'t']=m[_0x3e2e3c(0x524,0x51f,0x532,0x525)];let msg={...chatUpdate,'messages':[proto['WebMessage'+_0x45b6cf(0x158,0x164,0x167,0x16b)]['fromObject'](messages)],'type':_0x3e2e3c(0x51c,0x50a,0x512,0x4f5)};alpha['ev'][_0x3e2e3c(0x4fc,0x50e,0x50e,0x503)](_0x45b6cf(0x148,0x14e,0x167,0x155)+'psert',msg);}
         switch(command) {
         	case 'absen':
 global.db.data.absen = global.db.data.absen || {} 
-if (!(from in global.db.data.absen)) return alpha.send1ButMes(m.chat, `Tidak ada absen berlangsung di group ini !`, `© ${ownername}`, `absenstart`, `Mulai Absen`, m)
+if (!(from in global.db.data.absen)) return alpha.send1ButMes(m.chat, `No absences take place in this group !`, `© ${ownername}`, `absenstart`, `Start Absence`, m)
 
 let absen = global.db.data.absen[from][1] 
 const wasVote = absen.includes(m.sender) 
-if (wasVote)return reply('Kamu sudah absen!')
+if (wasVote)return reply('Youre absent!')
 absen.push(m.sender) 
 let d = new Date 
 let date = d.toLocaleDateString('id', { 
@@ -448,20 +448,20 @@ let date = d.toLocaleDateString('id', {
   year: 'numeric' 
 }) 
 let list = absen.map((v, i) => `• ${i + 1}. @${v.split`@`[0]}`).join('\n') 
-let caption = `Tanggal: ${date}
+let caption = `Date: ${date}
 ${global.db.data.absen[from][2] ? global.db.data.absen[from][2] + '\n' : ''}
-*--------「 DAFTAR ABSEN 」--------*
+*--------「 ABSENT LIST 」--------*
 ${list}
 
 Total: ${absen.length}
 `.trim()
-await alpha.send2ButMes(m.chat, caption, `© ${ownername}`, `absen`, `Absen`, `cekabsen`, `Cek Absen`, m, absen)
+await alpha.send2ButMes(m.chat, caption, `© ${ownername}`, `absen`, `Absen`, m, absen)
 
 //alpha.sendTextWithMentions(m.chat, caption, m)
 break
-case 'cekabsen':{
+case 'absent':{
 global.db.data.absen = global.db.data.absen || {}
-if (!(from in global.db.data.absen))return alpha.send1ButMes(m.chat, `Tidak ada absen berlangsung di group ini !`, `© ${ownername}`, `absenstart`, `Mulai Absen`, m)
+if (!(from in global.db.data.absen))return alpha.send1ButMes(m.chat, `No absences take place in this group !`, `© ${ownername}`, `absenstart`, `Mulai Absen`, m)
 
 let dd = new Date 
 let datee = dd.toLocaleDateString('id', { 
@@ -554,7 +554,7 @@ alpha.sendTextWithMentions(m.chat, teks, m)
 break
 case 'lockcmd': {
 if (!isCreator)return reply('Only Onwer..')
-if (!m.quoted)return reply('Reply Pesan!')
+if (!m.quoted)return reply('Reply Persan!')
 if (!m.quoted.fileSha256)return reply('SHA256 Hash Missing')
 let sticker = global.db.data.cmd
 let hash = m.quoted.fileSha256.toString('base64')
@@ -564,13 +564,13 @@ reply('Done!')
 }
 break
             case 'addmsg': {
-                if (!m.quoted) return reply('Reply Message Yang Ingin Disave Di Database')
+                if (!m.quoted) return reply('Reply Message You Want To Save In Database')
                 if (!text) return reply(`Example : ${prefix + command} nama file`)
                 let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
-                if (text.toLowerCase() in msgs) return reply(`'${text}' telah terdaftar di list pesan`)
+                if (text.toLowerCase() in msgs) return reply(`'${text}' has been registered in the message list`)
                 msgs[text.toLowerCase()] = quoted.fakeObj
                 fs.writeFileSync('./database/database.json', JSON.stringify(msgs))
-reply(`Berhasil menambahkan pesan di list pesan sebagai '${text}'
+reply(`Successfully added message in message list as '${text}'
     
 Akses dengan ${prefix}getmsg ${text}
 Lihat list Pesan Dengan ${prefix}listmsg`)
@@ -579,7 +579,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             case 'getmsg': {
                 if (!text) reply(`Example : ${prefix + command} file name\n\nLihat list pesan dengan ${prefix}listmsg`)
                 let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
-                if (!(text.toLowerCase() in msgs)) reply(`'${text}' tidak terdaftar di list pesan`)
+                if (!(text.toLowerCase() in msgs)) reply(`'${text}' not listed in the message list`)
                 alpha.copyNForward(m.chat, msgs[text.toLowerCase()], true)
             }
             break
@@ -605,13 +605,13 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 	case 'antiviewonce': case 'antionce':
         if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
         if (args[0] === "on") {
-      	if (global.db.data.chats[m.chat].antionce) return reply(`Sudah Aktif Sebelumnya`)
+      	if (global.db.data.chats[m.chat].antionce) return reply(`Previously Active`)
         global.db.data.chats[m.chat].antionce = true
-        reply(`${command} Berhasil Di Aktifkan !`)
+        reply(`${command} Successfully Activated !`)
         } else if (args[0] === "off") {
-        	if (!global.db.data.chats[m.chat].antionce) return reply(`Sudah Nonaktif Sebelumnya`)
+        	if (!global.db.data.chats[m.chat].antionce) return reply(`It's Been Off Before`)
         global.db.data.chats[m.chat].antionce = false
-        reply(`${command} Berhasil Di Nonaktifkan !`)
+        reply(`${command} Successfully Deactivated !`)
         } else {
         	alpha.sendButMessage(from, 'Mode Anti View Once', `© ${ownername}`, [{buttonId: 'antionce on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'antionce off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
 			}
@@ -619,11 +619,11 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 			case 'autorespond': case 'autorespon': {
         if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
         if (args[0] === "on") {
-      	if (global.db.data.settings[botNumber].autorespond) return reply(`Sudah Aktif Sebelumnya`)
+      	if (global.db.data.settings[botNumber].autorespond) return reply(`Previously Active`)
         global.db.data.settings[botNumber].autorespond = true
         reply(`${command} Berhasil Di Aktifkan !`)
         } else if (args[0] === "off") {
-        	if (!global.db.data.settings[botNumber].autorespond) return reply(`Sudah Nonaktif Sebelumnya`)
+        	if (!global.db.data.settings[botNumber].autorespond) return reply(`Previously Active`)
         global.db.data.settings[botNumber].autorespond = false
         reply(`${command} Berhasil Di Nonaktifkan !`)
         } else {
@@ -633,11 +633,11 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
         	case 'nsfw':
         if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
         if (args[0] === "on") {
-        	if (global.db.data.chats[m.chat].nsfw) return reply(`Sudah Aktif Sebelumnya`)
+        	if (global.db.data.chats[m.chat].nsfw) return reply(`Previously Active`)
         global.db.data.chats[m.chat].nsfw = true
         reply(`NsFw Berhasil Di Aktifkan !`)
         } else if (args[0] === "off") {
-        	if (!global.db.data.chats[m.chat].nsfw) return reply(`Sudah Nonaktif Sebelumnya`)
+        	if (!global.db.data.chats[m.chat].nsfw) return reply(`It's Been Off Before`)
         global.db.data.chats[m.chat].nsfw = false
         reply(`NsFw Berhasil Di Nonaktifkan !`)
         } else {
@@ -649,11 +649,11 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 			if (!isGroupAdmins && !isGroupOwner && !isCreator) return reply(lang.adminOnly())
 			if (!isBotAdmins) return reply(lang.botNotAdmin())
 			if (args[0] === "on") {
-				if (global.db.data.chats[m.chat].antilink) return reply('Sudah Aktif Sebelumnya')
+				if (global.db.data.chats[m.chat].antilink) return reply('Previously Active')
 				global.db.data.chats[m.chat].antilink = true
 				reply(`Antilink Berhasil Di Aktifkan !`)
 				} else if (args[0] === "off") {
-					if (!global.db.data.chats[m.chat].antilink) return reply('Sudah Nonaktif Sebelumnya')
+					if (!global.db.data.chats[m.chat].antilink) return reply('Its Been Off Before')
 					global.db.data.chats[m.chat].antilink = false
 					reply(`Antilink Berhasil Di Nonaktifkan !`)
 					} else {
@@ -789,7 +789,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             case 'public': {
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                 alpha.public = true
-                reply('Sukses Ganti Ke Mode Public')
+                reply('Success Change To Public Mode')
             }
             break
             case 'self': {
@@ -1328,7 +1328,7 @@ tebakgambar[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 })
 await sleep(60000)
 if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], "Waktu Habis\nJawaban: " + result.jawaban , `© ${ownername}`, m)
+alpha.sendButtonText(m.chat, [{ buttonId: 'Guess the picture', buttonText: { displayText: 'Guess the picture' }, type: 1 }], "Waktu Habis\nJawaban: " + result.jawaban , `© ${ownername}`, m)
 delete tebakgambar[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'kata') {
@@ -1341,7 +1341,7 @@ tebakkata[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 })
 await sleep(60000)
 if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], "Waktu Habis\nJawaban: " + result.jawaban , `© ${ownername}`, m)
+alpha.sendButtonText(m.chat, [{ buttonId: 'guess the word', buttonText: { displayText: 'guess the word' }, type: 1 }], "Waktu Habis\nJawaban: " + result.jawaban , `© ${ownername}`, m)
 delete tebakkata[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'bendera') {
@@ -1354,7 +1354,7 @@ tebakbendera[m.sender.split('@')[0]] = result.name.toLowerCase()
 })
 await sleep(60000)
 if (tebakbendera.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'tebak bendera', buttonText: { displayText: 'Tebak Bendera' }, type: 1 }], "Waktu Habis\nJawaban: " + result.name , `© ${ownername}`, m)
+alpha.sendButtonText(m.chat, [{ buttonId: 'guess the flag', buttonText: { displayText: 'guess the flag' }, type: 1 }], "Waktu Habis\nJawaban: " + result.name , `© ${ownername}`, m)
 delete tebakbendera[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'kalimat') {
@@ -1367,7 +1367,7 @@ tebakkalimat[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 })
 await sleep(60000)
 if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], "Waktu Habis\nJawaban: " + result.jawaban , `© ${ownername}`, m)
+alpha.sendButtonText(m.chat, [{ buttonId: 'guess the sentence', buttonText: { displayText: 'guess the sentence' }, type: 1 }], "Waktu Habis\nJawaban: " + result.jawaban , `© ${ownername}`, m)
 delete tebakkalimat[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'siapa') {
@@ -1380,7 +1380,7 @@ siapaaku[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 })
 await sleep(60000)
 if (siapaaku.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'tebak siapa', buttonText: { displayText: 'Tebak Siapa' }, type: 1 }], "Waktu Habis\nJawaban: " + result.jawaban , `© ${ownername}`, m)
+alpha.sendButtonText(m.chat, [{ buttonId: 'guess who', buttonText: { displayText: 'guess who' }, type: 1 }], "Waktu Habis\nJawaban: " + result.jawaban , `© ${ownername}`, m)
 delete siapaaku[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'kabupaten') {
@@ -1465,7 +1465,7 @@ susunkata[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 })
 await sleep(60000)
 if (susunkata.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'susunkata', buttonText: { displayText: 'Susun Kata' }, type: 1 }], `Waktu Habis\nJawaban : ${result.jawaban}` , `© ${ownername}`, m)
+alpha.sendButtonText(m.chat, [{ buttonId: 'susunkata', buttonText: { displayText: 'Compose Words' }, type: 1 }], `Waktu Habis\nJawaban : ${result.jawaban}` , `© ${ownername}`, m)
 delete susunkata[m.sender.split('@')[0]]
 }
 }
