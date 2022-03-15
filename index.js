@@ -795,7 +795,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             case 'self': {
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                 alpha.public = false
-                reply('Sukses Ganti Ke Mode Self\n\nUntuk mengubah ke mode public silahkan gunakan nomor bot')
+                reply('Successfully Change To Self Mode\n\nTo change to public mode, please use the bot number')
             }
             break
             case 'ping': case 'botstatus': case 'statusbot': {
@@ -848,7 +848,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
           },
           {
             "urlButton": {
-              "displayText": "Rest Api's",              
+              "displayText": " Api'",              
               "url": `${myweb}`
 
             }
@@ -894,26 +894,26 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 					})
 					break
 case 'stikerin':case 's': case 'sticker': case 'stiker': {
-if (!quoted) return reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
+if (!quoted) return reply(`Send/Reply Image/Video With Caption ${prefix + command}\n\nVideo Sticker Duration 1-9 Seconds☕`)
 if (/image/.test(mime)) {
 let media = await quoted.download()
 let encmedia = await alpha.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 11) return reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
+if ((quoted.msg || quoted).seconds > 11) return reply(`Send/Reply Image/Video With Caption ${prefix + command}\n\nVideo Sticker Duration 1-9 Seconds☕`)
 let media = await quoted.download()
 let encmedia = await alpha.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else {
-reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
+reply(`Send/Reply Image/Video With Caption ${prefix + command}\n\nVideo Sticker Duration 1-9 Seconds☕`)
 }
 }
 break
 			case 'setppbot': case 'setpp': {
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                 if (!quoted) throw 'Reply Image'
-                if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+                if (!/image/.test(mime)) throw `Send/Reply Image With Caption ${prefix + command}`
+                if (/webp/.test(mime)) throw `Send/Reply Image With Caption ${prefix + command}`
                 let media = await alpha.downloadAndSaveMediaMessage(quoted)
                 await alpha.updateProfilePicture(alpha.user.id, { url: media }).catch((err) => fs.unlinkSync(media))
                 reply(lang.ok())
@@ -922,17 +922,17 @@ break
 			case 'setppgroup': case 'setppgrup': case 'setppgc': {
                 if (!m.isGroup) throw mess.group
                 if (!m.isGroup && !isBotAdmins && !isGroupAdmins) return reply(lang.adminOnly())
-                if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+                if (!quoted) throw `Send/Reply Image With Caption ${prefix + command}`
+                if (!/image/.test(mime)) throw `Send/Reply Image With Caption ${prefix + command}`
+                if (/webp/.test(mime)) throw `Send/Reply Image With Caption ${prefix + command}`
                 let media = await alpha.downloadAndSaveMediaMessage(quoted)
                 await alpha.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
                 reply(lang.ok())
                 }
                 break    
 			case 'toaud': case 'toaudio': {
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`
-            if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`
+            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Send/Reply Video/Audio You Want to Use as Audio With Caption ${prefix + command}`
+            if (!quoted) throw `Send/Reply Video/Audio You Want to Use as Audio With Caption ${prefix + command}`
             m.reply(mess.wait)
             let media = await quoted.download()
             let audio = await toAudio(media, 'mp4')
@@ -940,9 +940,9 @@ break
             }
             break
             case 'tomp3': {
-            if (/document/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
-            if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
+            if (/document/.test(mime)) throw `Send/Reply Video/Audio You Want to Convert into MP3 With Caption ${prefix + command}`
+            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Send/Reply Video/Audio You Want to Convert into MP3 With Caption ${prefix + command}`
+            if (!quoted) throw `Send/Reply Video/Audio You Want to Convert into MP3 With Caption ${prefix + command}`
             m.reply(mess.wait)
             let media = await quoted.download()
             let audio = await toAudio(media, 'mp4')
@@ -950,8 +950,8 @@ break
             }
             break
             case 'tovn': case 'toptt': {
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Reply Video/Audio Yang Ingin Dijadikan VN Dengan Caption ${prefix + command}`
-            if (!quoted) throw `Reply Video/Audio Yang Ingin Dijadikan VN Dengan Caption ${prefix + command}`
+            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`
+            if (!quoted) throw `Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`
             m.reply(mess.wait)
             let media = await quoted.download()
             let audio = await toPTT(media, 'mp4')
@@ -1198,8 +1198,8 @@ break
 if (!m.isGroup) return reply(lang.groupOnly())
 if (!isBotAdmins) return reply(lang.botNotAdmin())
 if (!isGroupAdmins && !isGroupOwner && !isBotAdmins) return reply(lang.adminOnly())
-if (!quoted) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
-if (!/image/.test(mime)) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
+if (!quoted) return reply(`Send/Reply Image With Caption ${prefix + command}`)
+if (!/image/.test(mime)) return reply(`Send/Reply Image With Caption ${prefix + command}`)
 let media = await alpha.downloadAndSaveMediaMessage(quoted)
 await alpha.updateProfilePicture(groupId, { url: media }).catch((err) => fs.unlinkSync(media))
 reply(lang.ok())
@@ -1233,7 +1233,7 @@ break
 				if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
                 if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di kick !`)
+                if (!m.quoted && !text) return reply(`Send the number/tag/reply target you want to kick !`)
 				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 				await alpha.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 				}
@@ -1242,7 +1242,7 @@ break
 				if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
                 if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di promote !`)
+                if (!m.quoted && !text) return reply(`Send the target number/tag/reply you want to promote !`)
 				let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 				await alpha.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 				}
@@ -1251,7 +1251,7 @@ break
 				if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
                 if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())	
-                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di promote !`)
+                if (!m.quoted && !text) return reply(`Send the target number/tag/reply you want to promote !`)
 				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 				await alpha.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 				}
@@ -1260,7 +1260,7 @@ break
 				if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
                 if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di demote !`)
+                if (!m.quoted && !text) return reply(`Send the target number/tag/reply you want to demote!`)
 				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 				await alpha.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 				}
@@ -1296,12 +1296,12 @@ if (!m.isGroup) return reply(lang.groupOnly())
 let user = global.db.data.users[m.sender]
 user.afkTime = + new Date
 user.afkReason = text
-m.reply(`${m.pushName} Telah Afk Dengan Alasan ${text ? ': ' + text : 'Nothing'}`)
+m.reply(`${m.pushName} Has Afk With Reason ${text ? ': ' + text : 'Nothing'}`)
 }
 break  
 case 'family100': {
 if ('family100'+m.chat in _family100) {
-m.reply('Masih Ada Sesi Yang Belum Diselesaikan!')
+m.reply('There Are Still Unfinished Sessions!')
 throw false
 }
 let anu = await fetchJson('https://fatiharridho.my.id/database/games/family100.json')
@@ -1319,7 +1319,7 @@ break
 case 'tebak': {
 if (!text) return reply(`Option : 1. gambar\n2. kata\n3. bendera\n4. kalimat\n5. siapa\n6. kabupaten\n7. kimia\n8. lirik\n9. tebakan\n\nExample ${prefix + command} gambar`)
 if (args[0] === 'gambar') {
-if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) throw`Masih Ada Sesi Yang Belum Diselesaikan!`
+if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) throw`'There Are Still Unfinished Sessions!'`
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakgambar.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
 alpha.sendMedia(m.chat, result.img, '', m, { caption: `Silahkan Jawab Soal Di Atas Ini\n\nDeskripsi : ${result.deskripsi}\nWaktu : 60s` }).then(() => {
@@ -1332,10 +1332,10 @@ alpha.sendButtonText(m.chat, [{ buttonId: 'Guess the picture', buttonText: { dis
 delete tebakgambar[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'kata') {
-if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
+if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkata.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
-alpha.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, m).then(() => {
+alpha.sendText(m.chat, `Please Answer The Following Questions\n\n${result.soal}\nWaktu : 60s`, m).then(() => {
 console.log("Jawaban: " + result.jawaban)
 tebakkata[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 })
@@ -1345,7 +1345,7 @@ alpha.sendButtonText(m.chat, [{ buttonId: 'guess the word', buttonText: { displa
 delete tebakkata[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'bendera') {
-if (tebakbendera.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
+if (tebakbendera.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakbendera2.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
 alpha.sendMedia(m.chat, result.img, '', m, { caption: `Silahkan Jawab Pertanyaan Diatas\n\nWaktu : 60s` }).then(() => {
@@ -1358,7 +1358,7 @@ alpha.sendButtonText(m.chat, [{ buttonId: 'guess the flag', buttonText: { displa
 delete tebakbendera[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'kalimat') {
-if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
+if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkalimat.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
 alpha.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, m).then(() => {
@@ -1371,7 +1371,7 @@ alpha.sendButtonText(m.chat, [{ buttonId: 'guess the sentence', buttonText: { di
 delete tebakkalimat[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'siapa') {
-if (siapaaku.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
+if (siapaaku.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/siapakahaku.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
 alpha.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, m).then(() => {
@@ -1384,7 +1384,7 @@ alpha.sendButtonText(m.chat, [{ buttonId: 'guess who', buttonText: { displayText
 delete siapaaku[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'kabupaten') {
-if (tebakkabupaten.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
+if (tebakkabupaten.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkabupaten.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
 alpha.sendImage(m.chat, result.url, `Gambar Diatas Adalah Gambar dari Kabupaten?\nWaktu : 60s`, m).then(() => {
@@ -1397,7 +1397,7 @@ alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kabupaten', buttonText: { displ
 delete tebakkabupaten[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'kimia') {
-if (tebakkimia.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
+if (tebakkimia.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkimia.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
 alpha.sendText(m.chat, `Apa Arti Dari Simbol : *${result.lambang}*?\nWaktu : 60s`, m).then(() => {
@@ -1410,7 +1410,7 @@ alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kimia', buttonText: { displayTe
 delete tebakkimia[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'lirik') {
-if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
+if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaklirik.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
 alpha.sendText(m.chat, `Ini Adalah Lirik Dari Lagu? : *${result.soal}*?\nWaktu : 60s`, m).then(() => {
@@ -1423,7 +1423,7 @@ m.reply("Waktu Habis\nJawaban: " + result.jawaban)
 delete tebaklirik[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'tebakan') {
-if (tebaktebakan.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
+if (tebaktebakan.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaktebakan.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
 alpha.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, m).then(() => {
@@ -1439,7 +1439,7 @@ delete tebaktebakan[m.sender.split('@')[0]]
 }
 break
 case 'caklontong': {
-if (caklontong.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
+if (caklontong.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
 let anu = await fetchJson('https://fatiharridho.my.id/database/games/caklontong.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
 alpha.sendText(m.chat, `*Jawablah Pertanyaan Berikut :*\n${result.soal}*\nWaktu : 60s`, m).then(() => {
@@ -1456,7 +1456,7 @@ delete caklontong[m.sender.split('@')[0]]
 }
 break
 case 'susunkata': {
-if (susunkata.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
+if (susunkata.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/susunkata.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
 alpha.sendText(m.chat, `*Jawablah Pertanyaan Berikut :*\nSoal : ${result.soal}\nTipe : ${result.tipe}\nWaktu : 60s`, m).then(() => {
@@ -1471,7 +1471,7 @@ delete susunkata[m.sender.split('@')[0]]
 }
 break
 case 'tekateki': {
-if (tekateki.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
+if (tekateki.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tekateki.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
 alpha.sendText(m.chat, `*Jawablah Pertanyaan Berikut :*\n${result.soal}\nWaktu : 60s`, m).then(() => {
@@ -1488,7 +1488,7 @@ break
             case 'setmenu':{
             	if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
             const listhades = ['templateLocation', 'templateTenor','list', 'katalog', 'katalog2']
-			alpha.sendList(from, 'Mau set menu bang ?', `© ${ownername}`, salam + ' ' +  pushname, 'KLIK DISINI', [
+			alpha.sendList(from, 'Do you want a set menu ?', `© ${ownername}`, salam + ' ' +  pushname, 'CLICK HERE', [
 							{
 								"title": "Set Menu-1",
 								"rows": [
@@ -1580,10 +1580,10 @@ break
             break
 				case 'menu':{
 					if(typemenu == 'templateLocation'){
-						await alpha.send5ButLoc(from, lang.menunya(salam, pushname, botname) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] )
+						await alpha.send5ButLoc(from, lang.menunya(salam, pushname, botname) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] )
 							}
 						if(typemenu == 'templateTenor'){
-							alpha.send5ButGif(from, lang.menunya(salam, pushname, botname) , `© ${ownername}` ,pp_bot, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] , {quoted: m})
+							alpha.send5ButGif(from, lang.menunya(salam, pushname, botname) , `© ${ownername}` ,pp_bot, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] , {quoted: m})
 						 }
 						if(typemenu == 'katalog'){
 							alpha.sendKatalog(m.chat, "ALL MENU BOT", lang.listMenu(time, salam, pushname, prefix), pp_bot, {quoted:m})
@@ -1597,108 +1597,108 @@ break
 					}
 					break    
 	case 'allmenu':{
-			await alpha.send5ButLoc(from, `is that ${pushname} 👋, I am *${botname}* ` + '\n\n' + lang.listMenu(time, salam, pushname, prefix) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Rules","id": 'rules'}}] )
+			await alpha.send5ButLoc(from, `is that ${pushname} 👋, I am *${botname}* ` + '\n\n' + lang.listMenu(time, salam, pushname, prefix) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Rules","id": 'rules'}}] )
 		}
 	break   
 	case 'infocmd': case'infomenu':{
 		var ownercmd = await getBuffer(picak+'Info Menu')
-		await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.info(prefix) , `© ${ownername}`,ownercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+		await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.info(prefix) , `© ${ownername}`,ownercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
       }
   break 
 	case 'ownercmd': case'ownermenu':{
 		var ownercmd = await getBuffer(picak+'Owner Menu')
-		await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ownermenu(prefix) , `© ${ownername}`,ownercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+		await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ownermenu(prefix) , `© ${ownername}`,ownercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
       }
   break 
   case 'databasecmd': case'databasemenu':{
 		var ownercmd = await getBuffer(picak+'Database Menu')
-		await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.database(prefix) , `© ${ownername}`,ownercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+		await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.database(prefix) , `© ${ownername}`,ownercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
       }
   break 
   case 'groupcmd': case 'groupmenu':
  var groupcmd = await getBuffer(picak+'Group Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.group(prefix) , `© ${ownername}`,groupcmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.group(prefix) , `© ${ownername}`,groupcmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         break       
     case 'animecmd': case 'animemenu':
  var animecmd = await getBuffer(picak+'Anime Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.anime(prefix) , `© ${ownername}`,animecmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.anime(prefix) , `© ${ownername}`,animecmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         break 
             case 'tagcmd': case 'tagmenu':
  var groupcmd = await getBuffer(picak+'Tag Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.tag(prefix) , `© ${ownername}`,groupcmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.tag(prefix) , `© ${ownername}`,groupcmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         break 
         case 'stalkcmd': case 'stalkmenu':
  var groupcmd = await getBuffer(picak+'Stalking Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.stalk(prefix) , `© ${ownername}`,groupcmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.stalk(prefix) , `© ${ownername}`,groupcmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         break 
         
         case 'searchcmd': case 'searchmenu':{
  var searchcmd = await getBuffer(picak+'Search Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.search(prefix) , `© ${ownername}`,searchcmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.search(prefix) , `© ${ownername}`,searchcmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
       }
   break 
         case 'convertercmd': case 'convertmenu':
  var convertercmd = await getBuffer(picak+'Convert Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.converter(prefix) , `© ${ownername}`,convertercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.converter(prefix) , `© ${ownername}`,convertercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         break 
         case 'stickercmd': case 'stickermenu':
  var stickercmd = await getBuffer(picak+'Image Effect Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.effect(prefix) , `© ${ownername}`,stickercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.effect(prefix) , `© ${ownername}`,stickercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         break 
         case 'stickercmd2': case 'stickermenu2':
  var stickercmd = await getBuffer(picak+'Sticker Effect Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.effect2(prefix) , `© ${ownername}`,stickercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.effect2(prefix) , `© ${ownername}`,stickercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         break 
         case 'downloadercmd': case 'downloadmenu':
  var downloadercmd = await getBuffer(picak+'Download Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.download(prefix) , `© ${ownername}`,downloadercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.download(prefix) , `© ${ownername}`,downloadercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         break 
         case 'ranimecmd': case 'animemenu':
  var ranimecmd = await getBuffer(picak+'Random Anime')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ranime(prefix) , `© ${ownername}`,ranimecmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ranime(prefix) , `© ${ownername}`,ranimecmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         break 
         case 'nsfwcmd': case 'nsfwcommand':{
  var thanksto = await getBuffer(picak+'Nsfw Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.nsfw(prefix) , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.nsfw(prefix) , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         }
 break 
 case 'textprocmd': case 'textpromenu':
  var textprocmd = await getBuffer(picak+'Textpro Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.textpro(prefix) , `© ${ownername}`,textprocmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.textpro(prefix) , `© ${ownername}`,textprocmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         break 
         case 'othercmd': case 'othermenu':
  var othercmd = await getBuffer(picak+'Others Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.other(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.other(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         break 
         case 'gamecmd': case 'gamemenu':
  var othercmd = await getBuffer(picak+'Games Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.game(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.game(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         break 
         case 'asupancmd': case 'asupanmenu':
  var othercmd = await getBuffer(picak+'Asupan Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.asupan(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.asupan(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         break 
         case 'cecancmd': case 'cecanmenu':
  var othercmd = await getBuffer(picak+'Cecan Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.cecan(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.cecan(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         break 
         case 'primbonmenu': case 'primboncmd':{
  var thanksto = await getBuffer(picak+'Primbon Menu')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.primbonmenu(prefix) , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.primbonmenu(prefix) , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         }
 break 
         case 'telestc': case 'telecmd':{
  var thanksto = await getBuffer(picak+'Telegram Sticker')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.stcmenu(prefix) , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.stcmenu(prefix) , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         }
 break 
 case 'thanksto': case 'tqto':{
  var thanksto = await getBuffer(picak+'Contributors')
- await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.tqto() , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+ await alpha.send5ButLoc(from, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.tqto() , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": " Api'","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donation","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
         }
 break 
 case 'take':case 'wm':{
-if (!quoted) return reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
+if (!quoted) return reply(`Send/Reply Image/Video With Caption ${prefix + command}\n\nVideo Sticker Duration 1-9 Seconds☕`)
 if (!text) return reply(`Kirim perintah ${prefix + command} packname|author`)
 if (!text.includes('|')) return reply(`Kirim perintah ${prefix + command} packname|author`)
 if (/image/.test(mime)) {
@@ -1706,12 +1706,12 @@ let media = await quoted.download()
 let encmedia = await alpha.sendImageAsSticker(m.chat, media, m, { packname: text.split("|")[0], author: text.split("|")[1] })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 11) return reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
+if ((quoted.msg || quoted).seconds > 11) return reply(`Send/Reply Image/Video With Caption ${prefix + command}\n\nVideo Sticker Duration 1-9 Seconds☕`)
 let media = await quoted.download()
 let encmedia = await alpha.sendVideoAsSticker(m.chat, media, m, { packname: text.split("|")[0], author: text.split("|")[1] })
 await fs.unlinkSync(encmedia)
 } else {
-reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
+reply(`Send/Reply Image/Video With Caption ${prefix + command}\n\nVideo Sticker Duration 1-9 Seconds☕`)
 }
 }
 break
