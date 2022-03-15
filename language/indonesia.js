@@ -1,6 +1,6 @@
-exports.private = () =>{
-	return`Fitur hanya bisa di gunakan di private chat`
-	}
+exports.private = () => {
+    return `Fitur hanya bisa di gunakan di private chat`
+}
 exports.wait = () => {
     return `⏳ Mohon tunggu sebentar~`
 }
@@ -84,8 +84,8 @@ exports.videoLimit = () => {
 exports.notNum = (q) => {
     return `"${q}", bukan angka!`
 }
-exports.menunya = (salam, pushname, botname) =>{
-	return`Hai kak ${pushname} 👋 selamat ${salam} , 
+exports.menunya = (salam, pushname, botname) => {
+    return `is that ${pushname} 👋 selamat ${salam} , 
 saya ${botname}, bot ini adalah Beta Multi-Device Whatsapp. 
 Jika kamu menemukan semacam bug atau kesalahan mohon dimaklumi dulu ya, 
 lapor owner agar segera di perbaiki 🙏      
@@ -750,8 +750,8 @@ Arigatou Gozaimasu! Untuk kalian user ramah dan Beberapa orang yg ikut membantu 
 😖🙏
 `
 }
-exports.welcome = () =>{
-	return`𝖩𝖺𝗇𝗀𝖺𝗇 𝗅𝗎𝗉𝖺 𝗂𝗇𝗍𝗋𝗈 𝗄𝖺𝗄 🤗
+exports.welcome = () => {
+    return `𝖩𝖺𝗇𝗀𝖺𝗇 𝗅𝗎𝗉𝖺 𝗂𝗇𝗍𝗋𝗈 𝗄𝖺𝗄 🤗
 	
 ╭ 𝖭𝖺𝗆𝖺 :
 ├ 𝖴𝗆𝗎𝗋 :
@@ -759,12 +759,12 @@ exports.welcome = () =>{
 ├ 𝖠𝗌𝗄𝗈𝗍 :
 ╰❒ 𝖯𝖺𝗍𝗎𝗁𝗂 𝗋𝗎𝗅𝖾𝗌 𝗀𝗋𝗎𝗉 𝗒𝖺 𝗄𝖺k ~`
 }
-exports.leave = () =>{
-	return`Yah kok out 😣 Mental aman kan kak >.<
+exports.leave = () => {
+    return `Yah kok out 😣 Mental aman kan kak >.<
 Goodbye`
 }
-exports.source = () =>{
-return`*------「 SOURCE CODE 」 ------*
+exports.source = () => {
+    return `*------「 SOURCE CODE 」 ------*
 
 Base : https://github.com/DikaArdnt/Hisoka-Morou
 Recode : https://youtube.com/playlist?list=PLFCglBzFPHG7vSQaa9S3P8yfla_d9w-2-
@@ -774,7 +774,7 @@ exports.tos = (ownernomer) => {
     return `
 *-------「 DONATE 」 -------*
 
-Hai kak ☺️ 
+is that ☺️ 
 Kalian bisa mendukung saya agar bot ini tetap up to date dengan cara donasi
 
 Berapapun donasi kalian akan sangat berarti 👍
@@ -787,8 +787,8 @@ wa.me/${ownernomer}
     `
 }
 
-exports.info = (prefix) =>{
-	return`╭─❒ 「 Bot Info 」 
+exports.info = (prefix) => {
+    return `╭─❒ 「 Bot Info 」 
 ├ ${prefix}owner
 ├ ${prefix}rules
 ├ ${prefix}sc
@@ -796,10 +796,11 @@ exports.info = (prefix) =>{
 ├ ${prefix}runtime
 ├ ${prefix}botstatus
 ╰❒ ${prefix}donate
-`}
+`
+}
 
-exports.ownermenu = (prefix) =>{
-return`╭─❒ 「 Owner 」 
+exports.ownermenu = (prefix) => {
+    return `╭─❒ 「 Owner 」 
 ├ < evaluate
 ├ > evaluate
 ├ $ exec
@@ -825,10 +826,11 @@ return`╭─❒ 「 Owner 」
 ├ ${prefix}public [only bot]
 ├ ${prefix}del [pesan bot]
 ╰❒ ${prefix}setppbot [reply image]
-`}
+`
+}
 
-exports.database = (prefix) =>{
-	return`╭─❒ 「 Database 」 
+exports.database = (prefix) => {
+    return `╭─❒ 「 Database 」 
 ├ ${prefix}setcmd [reply stiker]
 ├ ${prefix}delcmd [reply stiker]
 ├ ${prefix}listcmd
@@ -840,10 +842,11 @@ exports.database = (prefix) =>{
 ├ ${prefix}getmsg [nama file]
 ├ ${prefix}listmsg
 ╰❒ ${prefix}delmsg [nama file]
-`}
+`
+}
 
-exports.group = (prefix) =>{
-	return`╭─❒ 「 Group 」 
+exports.group = (prefix) => {
+    return `╭─❒ 「 Group 」 
 ├ ${prefix}listonline
 ├ ${prefix}sider
 ├ ${prefix}wm packname|author
@@ -861,33 +864,37 @@ exports.group = (prefix) =>{
 ├ ${prefix}group [open/close]
 ├ ${prefix}tagall [text]
 ╰❒ ${prefix}hidetag [text]
-`}
+`
+}
 
-exports.anime = (prefix) =>{
-	return`╭─❒ 「 Anime 」 
+exports.anime = (prefix) => {
+    return `╭─❒ 「 Anime 」 
 ├ ${prefix}quotesanime
 ├ ${prefix}anime [query]
 ├ ${prefix}manga [query]
 ╰❒ ${prefix}character [query]
-`}
+`
+}
 
-exports.tag = (prefix) =>{
-	return`╭─❒ 「 Tag 」 
+exports.tag = (prefix) => {
+    return `╭─❒ 「 Tag 」 
 ├ ${prefix}stickertag
 ├ ${prefix}videotag [query]
 ├ ${prefix}vntag [query]
 ╰❒ ${prefix}imagetag [query]
-`}
+`
+}
 
-exports.stalk = (prefix) =>{
-	return`╭─❒ 「 Stalking 」 
+exports.stalk = (prefix) => {
+    return `╭─❒ 「 Stalking 」 
 ├ ${prefix}igstalk [username]
 ├ ${prefix}ghstalk [username]
 ╰❒ ${prefix}ytstalk [channel]
-`}
+`
+}
 
-exports.search = (prefix) =>{
-	return`╭─❒ 「 Search 」 
+exports.search = (prefix) => {
+    return `╭─❒ 「 Search 」 
 ├ ${prefix}ytsearch [query]
 ├ ${prefix}wallpaper [query]
 ├ ${prefix}wikimedia [query]
@@ -896,10 +903,11 @@ exports.search = (prefix) =>{
 ├ ${prefix}webtoons [query]
 ├ ${prefix}drakor [query]
 ╰❒ ${prefix}pinterest [query]
-`}
+`
+}
 
-exports.converter = (prefix) =>{
-	return`╭─❒ 「 Converter 」 
+exports.converter = (prefix) => {
+    return `╭─❒ 「 Converter 」 
 ├ ${prefix}toaudio [video]
 ├ ${prefix}tomp3 [video]
 ├ ${prefix}tovn [video]
@@ -908,10 +916,11 @@ exports.converter = (prefix) =>{
 ├ ${prefix}togif [sticker]
 ├ ${prefix}tomp4 [sticker]
 ╰❒${prefix}toimg [reply sticker]
-`}
+`
+}
 
-exports.effect = (prefix) =>{
-	return`╭─❒ 「 Image Effect 」 
+exports.effect = (prefix) => {
+    return `╭─❒ 「 Image Effect 」 
 ├ ${prefix}wanted [reply image/stiker]
 ├ ${prefix}utatoo [reply image/stiker]
 ├ ${prefix}unsharpen [reply image/stiker]
@@ -946,11 +955,12 @@ exports.effect = (prefix) =>{
 ├ ${prefix}burn [reply image/stiker]
 ├ ${prefix}brazzers [reply image/stiker]
 ╰❒ ${prefix}beautiful [reply image/stiker]
-`}
+`
+}
 
 //
-exports.effect2 = (prefix) =>{
-	return`╭─❒ 「 Sticker Effect 」 
+exports.effect2 = (prefix) => {
+    return `╭─❒ 「 Sticker Effect 」 
 ├ ${prefix}jail [reply image/stiker]
 ├ ${prefix}red [reply image/stiker]
 ├ ${prefix}gay [reply image/stiker]
@@ -973,8 +983,8 @@ exports.effect2 = (prefix) =>{
 `
 }
 
-exports.download = (prefix) =>{
-return`╭─❒ 「 Download 」 
+exports.download = (prefix) => {
+    return `╭─❒ 「 Download 」 
 ├ ${prefix}tiktok [link]
 ├ ${prefix}tiktoknowm [link]
 ├ ${prefix}tiktokwm [link]
@@ -1003,8 +1013,8 @@ return`╭─❒ 「 Download 」
 `
 }
 
-exports.ranime = (prefix) =>{
-	return`╭─❒ 「 Random Anime 」
+exports.ranime = (prefix) => {
+    return `╭─❒ 「 Random Anime 」
 ├ ${prefix}loli
 ├ ${prefix}neko
 ├ ${prefix}waifu
@@ -1039,8 +1049,8 @@ exports.ranime = (prefix) =>{
 `
 }
 
-exports.nsfw = (prefix) =>{
-	return`╭─❒ 「 Nsfw & Sfw 」
+exports.nsfw = (prefix) => {
+    return `╭─❒ 「 Nsfw & Sfw 」
 ├ ${prefix}ahegao
 ├ ${prefix}ass
 ├ ${prefix}bdsm
@@ -1122,8 +1132,8 @@ exports.nsfw = (prefix) =>{
 `
 }
 
-exports.textpro = (prefix) =>{
-	return`╭─❒ 「 Textpro Menu 」
+exports.textpro = (prefix) => {
+    return `╭─❒ 「 Textpro Menu 」
 ├ ${prefix}halloween2 text|text2
 ├ ${prefix}horror text|text2
 ├ ${prefix}game8bit text|text2
@@ -1308,8 +1318,8 @@ exports.textpro = (prefix) =>{
 }
 
 
-exports.other = (prefix) =>{
-return`╭─❒ 「 Others 」
+exports.other = (prefix) => {
+    return `╭─❒ 「 Others 」
 ├ ${prefix}ttp [text]
 ├ ${prefix}attp [text]
 ├ ${prefix}afk [reason]
@@ -1320,8 +1330,8 @@ return`╭─❒ 「 Others 」
 ╰❒ ${prefix}memegen [text|text]
 `
 }
-exports.game = (prefix) =>{
-return`╭─❒ 「 Game Menu 」
+exports.game = (prefix) => {
+    return `╭─❒ 「 Game Menu 」
 ├ ${prefix}kuismath
 ├ ${prefix}tebak [option]
 ├ ${prefix}tekateki
@@ -1329,8 +1339,8 @@ return`╭─❒ 「 Game Menu 」
 ╰❒ ${prefix}caklontong
 `
 }
-exports.asupan = (prefix) =>{
-return`╭─❒ 「 Asupan Menu 」
+exports.asupan = (prefix) => {
+    return `╭─❒ 「 Asupan Menu 」
 ├ ${prefix}chika
 ├ ${prefix}delvira
 ├ ${prefix}ayu
@@ -1355,8 +1365,8 @@ return`╭─❒ 「 Asupan Menu 」
 ╰❒ ${prefix}syifa
 `
 }
-exports.cecan = (prefix) =>{
-return`╭─❒ 「 Random Cewe 」
+exports.cecan = (prefix) => {
+    return `╭─❒ 「 Random Cewe 」
 ├ ${prefix}china 
 ├ ${prefix}indonesia 
 ├ ${prefix}malaysia 
@@ -1371,8 +1381,8 @@ return`╭─❒ 「 Random Cewe 」
 `
 }
 
-exports.tqto = () =>{
-	return`╭─❒ 「 TqTo 」 
+exports.tqto = () => {
+    return `╭─❒ 「 TqTo 」 
 ├ My God
 ├ My Parents
 ├ Fatih A.
@@ -1387,8 +1397,8 @@ exports.tqto = () =>{
 `
 }
 
-exports.primbonmenu = (prefix) =>{
-	return`╭─❒ 「 Primbon 」
+exports.primbonmenu = (prefix) => {
+    return `╭─❒ 「 Primbon 」
 ├ ${prefix}nomorhoki 887435047326
 ├ ${prefix}artimimpi [query]
 ├ ${prefix}artinama [query]
@@ -1422,8 +1432,8 @@ exports.primbonmenu = (prefix) =>{
 `
 }
 
-exports.stcmenu = (prefix) =>{
-	return`╭─❒ 「 Telegram Sticker 」
+exports.stcmenu = (prefix) => {
+    return `╭─❒ 「 Telegram Sticker 」
 ├ ${prefix}awoawo
 ├ ${prefix}benedict
 ├ ${prefix}chat
@@ -1445,4 +1455,5 @@ exports.stcmenu = (prefix) =>{
 ├ ${prefix}sponsbob
 ├ ${prefix}kawan_sponsbob
 ╰❒ ${prefix}tyni
-`}
+`
+}
